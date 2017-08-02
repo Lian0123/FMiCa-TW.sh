@@ -7,6 +7,7 @@
 #	2017/07/08 Lian0123 version:0.0.2
 #	2017/07/10 Lian0123 version:0.0.3
 #       2017/07/29 Lian0123 version:0.0.4
+#       2017/07/29 Lian0123 version:0.0.41
 ##提升權限
 
 echo -e "\033[1;32m"
@@ -25,7 +26,7 @@ echo -e "  #  檔名：FMiCa-TW.sh                                           #  
 echo -e "  #  全名：Fixed Mint Cinnamon To Taiwan User Of Bash Shell      #  "
 echo -e "  #  用途：幫忙快速安裝                                          #  "
 echo -e "  #  The Program from : Lian0123                                 #  "
-echo -e "  #  The Version : 0.0.3  （很不穩定，這還沒完成）               #  "
+echo -e "  #  The Version : 0.0.41  （很不穩定，這還沒完成）              #  "
 echo -e "  ################################################################  "
 echo -e "                                                                    "
 echo -e "\033[0m"
@@ -34,32 +35,45 @@ while [ 1 ]
   do
     printf "你同意要使用此腳本安裝程式嗎？現在^C還來得及(任意鍵繼續)"
     read select
+    break
   done
 
 
 ##UPDATE
+echo -e "\033[1;32m"
 echo "正在執行APT SOURCE-LIST UPDATE..."
+echo -e "\033[0m"
 apt update
 
 ##UPGRADE
+echo -e "\033[1;32m"
 echo "正在進行 APT DIST-UPGRADE..."
+echo -e "\033[0m"
 #apt -y dist-upgrade
 
 ##安裝SCIM
+echo -e "\033[1;32m"
 echo "正在安裝SCIM中文注音..."
+echo -e "\033[0m"
 apt install -y scim-chewing
 ##預設SCIM
 
 ##移除難看的字體
+echo -e "\033[1;32m"
 echo "正在移除看似有點醜的字體系列..."
+echo -e "\033[0m"
 apt remove -y fonts-arphic-*
 
 ##安裝git
+echo -e "\033[1;32m"
 echo "正在安裝git..."
+echo -e "\033[0m"
 apt install -y git
 
 ##安裝make
+echo -e "\033[1;32m"
 echo "正在安裝make..."
+echo -e "\033[0m"
 apt install -y make 
 
 ##自訂選項設定（選擇）
@@ -74,13 +88,15 @@ apt install -y make
 
 while [ 1 ]
   do
+    echo -e "\033[1;32m"
     echo "你需要安裝其他的美觀圖標嗎？(請輸入選項數字)"
-    echo "1.google-paper-icon"
+    echo "1.Google-paper-icon"
     echo "2.Numix-icon-circle"
     echo "3.Breeze-icon"
     echo "4.No,thank..."
     printf "請輸入你的選項："
     read select
+    echo -e "\033[0m"
     if [ "$select" -le "4" ] || [ "$select" -ge "1"]
       then break
     fi
@@ -89,6 +105,9 @@ while [ 1 ]
 if [ "$select" == "1" ] 
   then
   ##來源：paper icon 的 github(修改)
+  echo -e "\033[1;32m"
+  echo "正在安裝Google-paper-icon..."
+  echo -e "\033[0m"
   mkdir .PAPER-ICON
   cd .PAPER-ICON
   git clone https://github.com/snwh/paper-icon-theme.git
@@ -100,12 +119,18 @@ if [ "$select" == "1" ]
 elif [ "$echo" == "2" ] 
   then
   ##來源：numix-icon 的 github（修改）
+  echo -e "\033[1;32m"
+  echo "正在安裝Numix-icon-circle..."
+  echo -e "\033[0m"
   add-apt-repository ppa：numix / ppa
   apt update
   apt install numix-icon-theme-circle
   apt install 
 elif [ "$echo" == "3" ]
   then
+  echo -e "\033[1;32m"
+  echo "正在安裝Breeze-icon..."
+  echo -e "\033[0m"
   mkdir .BREEZE-ICON
   cd .BREEZE-ICON
   git clone https://github.com/NitruxSA/breeze-icon-theme.git
@@ -120,8 +145,10 @@ fi
 ##工作列透明化選擇
 while [ 1 ]
   do
+    echo -e "\033[1;32m"
     printf "你想要安裝透明工作列嗎？(Y/N)"
     read IsTable
+    echo -e "\033[0m"
     if [ "$IsTable" == "Y" ] || [ "$IsTable" == "y" ]
       then 
       ##DoInstall
@@ -132,14 +159,19 @@ while [ 1 ]
   done
 
 ##安裝其他必要程式
-apt install -y vim
-apt install -y virtualbox
+
+echo -e "\033[1;32m"
+echo "正在安裝其他必要程式..."
+echo -e "\033[0m"
+apt install -y vim virtualbox
 
 ##Chrome?
 while [ 1 ]
   do
-    printf "你需要安裝chrome嗎？(Y/N)"
+    echo -e "\033[1;32m"
+    printf "你想要安裝透明工作列嗎？(Y/N)"
     read IsChrome
+    echo -e "\033[0m"
     if [ "$IsChrome" == "Y" ] || [ "$IsChrome" == "y" ]
       then
       wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
@@ -155,26 +187,34 @@ while [ 1 ]
 ##工程師專用選項
 while [ 1 ]
   do
-    printf "你是個程式工程師嗎？(Y/N)"
+    echo -e "\033[1;32m"
+    printf "你是程式工程師嗎？(Y/N)"
     read IsProgramer
+    echo -e "\033[0m"
     if [ "$IsProgramer" == "Y" ] || [ "$IsProgramer" == "y" ]
       then 
       while [ 1 ]
         do
+          echo -e "\033[1;32m"
           printf "你需要在此電腦上安裝伺服器程式嗎？(Y/N)"
           read DoServer
+          echo -e "\033[0m"
           if [ "$DoServer" == "Y" ] || [ "$DoServer" == "y" ]
             then 
             while [ 1 ]
               do
+                echo -e "\033[1;32m"
                 echo "請選擇服務器："
                 echo "1) Apach"
                 echo "2) negix"
                 printf "選擇選項：（請輸入代號）"
                 read DoServerType
+                echo -e "\033[0m"
+                break
               done
             while [ 1 ]
               do
+                echo -e "\033[1;32m"
                 echo "請選擇資料庫："
                 echo "1) MySQL"
                 echo "2) NoSQL"
@@ -183,6 +223,8 @@ while [ 1 ]
                 echo "\"已預裝PHP與phpmyadmin\""
                 printf "選擇選項：（請輸入代號）"
                 read DoDBType
+                echo -e "\033[0m"
+                break
               done
             break
           elif [ "$DoServer" == "N" ] || [ "$DoServer" == "n" ]
@@ -192,15 +234,19 @@ while [ 1 ]
         		
       while [ 1 ]
         do
+          echo -e "\033[1;32m"
           printf "你需要基於GUI的純文字編輯嗎？(Y/N)"
           read IsGUI
+          echo -e "\033[0m"
           if [ "$IsGUI" == "Y" ] || [ "$IsGUI" == "y" ]
-            then 
+            then
+            echo -e "\033[1;32m"
             echo "請選則編輯器："
             echo "1)Atom"
             echo "2)Sublime3"
             echo "3)Gvim"
             echo "4)Visual Studio Code"
+            echo -e "\033[0m"
             break
           elif [ "$IsGUI" == "N" ] || [ "$IsGUI" == "n" ]
             then break
@@ -208,8 +254,10 @@ while [ 1 ]
         done
       while [ 1 ]
         do
+          echo -e "\033[1;32m"
           printf "你需要Android Studio嗎？(Y/N)"
           read IsAndroid
+          echo -e "\033[0m"
           if [ "$ISAndroid" == "Y" ] || [ "$IsAndroid" == "y" ]
             then 
             ##Install
@@ -220,8 +268,10 @@ while [ 1 ]
         done			
       while [ 1 ]
         do
+          echo -e "\033[1;32m"
           printf "你需要Unity5.5.0-beta遊戲引擎嗎？(Y/N)"
           read IsUnity
+          echo -e "\033[0m"
           if [ "$IsUnity" == "Y" ] || [ "$IsUnity" == "y" ]
             then
               mkdir Unity5.5.0-bata
@@ -244,15 +294,19 @@ while [ 1 ]
 ##Wine
 while [ 1 ]
   do
+    echo -e "\033[1;32m"
     printf "需要立即安裝Wine嗎? (Y/N)"
-      read IsWine
+    read IsWine
+    echo -e "\033[0m"
       if [ "$IsWine" == "Y" ] || [ "$IsWine" == "y" ]
         then 
         apt install -y wine
         while [ 1 ] 
           do 
+            echo -e "\033[1;32m"  
             printf "需要順便安裝PlayOnLinux嗎? (Y/N)"
             read IsPlayOn
+            echo -e "\033[0m"
             if [ "$IsPlayOn" == "Y" ] || [ "$IsPlayOn" == "y" ]
               then
               wget -q "http://deb.playonlinux.com/public.gpg" -O- | sudo apt-key add -
@@ -275,8 +329,10 @@ while [ 1 ]
 ##詢問重新啟動
 while [ 1 ]
   do
+    echo -e "\033[1;32m"
     printf "需要立即重新啟動嗎？(Y/N)"
     read DoReboot
+    echo -e "\033[0m"
     if [ "$DoReboot" == "Y" ] || [ "$DoReboot" == "y" ]
       then reboot now
       break
