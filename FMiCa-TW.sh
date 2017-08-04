@@ -8,6 +8,7 @@
 #	2017/07/10 Lian0123 version:0.0.3
 #       2017/07/29 Lian0123 version:0.0.4
 #       2017/07/29 Lian0123 version:0.0.41
+#       2017/08/04 Lian0123 version:0.0.42
 ##提升權限
 
 echo -e "\033[1;32m"
@@ -24,9 +25,9 @@ echo -e "  #                           一一一一                           # 
 echo -e "  ################################################################  "
 echo -e "  #  檔名：FMiCa-TW.sh                                           #  "
 echo -e "  #  全名：Fixed Mint Cinnamon To Taiwan User Of Bash Shell      #  "
-echo -e "  #  用途：幫忙快速安裝                                          #  "
+echo -e "  #  用途：幫忙快速安裝程式                                      #  "
 echo -e "  #  The Program from : Lian0123                                 #  "
-echo -e "  #  The Version : 0.0.41  （很不穩定，這還沒完成）              #  "
+echo -e "  #  The Version : 0.0.42  （很不穩定，這還沒完成）              #  "
 echo -e "  ################################################################  "
 echo -e "                                                                    "
 echo -e "\033[0m"
@@ -163,7 +164,7 @@ while [ 1 ]
 echo -e "\033[1;32m"
 echo "正在安裝其他必要程式..."
 echo -e "\033[0m"
-apt install -y vim virtualbox
+apt install -y vim
 
 ##Chrome?
 while [ 1 ]
@@ -210,7 +211,11 @@ while [ 1 ]
                 printf "選擇選項：（請輸入代號）"
                 read DoServerType
                 echo -e "\033[0m"
-                break
+                if [ "$DoServer" == "1" ]
+                  then break
+                elif [ "$DoServer" == "2" ]
+                  then break
+                fi
               done
             while [ 1 ]
               do
@@ -224,7 +229,15 @@ while [ 1 ]
                 printf "選擇選項：（請輸入代號）"
                 read DoDBType
                 echo -e "\033[0m"
-                break
+                if [ "$DoDBType" == "1" ]
+                  then break
+                elif [ "$DoDBType" == "2" ]
+                  then break
+                elif [ "$DoDBType" == "3" ]
+                  then break
+                elif [ "$DoDBType" == "4" ]
+                  then break
+                fi
               done
             break
           elif [ "$DoServer" == "N" ] || [ "$DoServer" == "n" ]
@@ -325,6 +338,10 @@ while [ 1 ]
       fi
   done
 
+##輸出結束
+echo -e "\033[1;32m"
+echo "安裝結束"
+echo -e "\033[0m"
 
 ##詢問重新啟動
 while [ 1 ]
