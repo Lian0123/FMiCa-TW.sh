@@ -9,6 +9,7 @@
 #       2017/07/29 Lian0123 version:0.0.4
 #       2017/07/29 Lian0123 version:0.0.41
 #       2017/08/04 Lian0123 version:0.0.42
+#       2017/08/04 Lian0123 version:0.0.42-1
 ##提升權限
 
 echo -e "\033[1;32m"
@@ -170,7 +171,7 @@ apt install -y vim
 while [ 1 ]
   do
     echo -e "\033[1;32m"
-    printf "你想要安裝透明工作列嗎？(Y/N)"
+    printf "你想要安裝Chrome嗎？(Y/N)"
     read IsChrome
     echo -e "\033[0m"
     if [ "$IsChrome" == "Y" ] || [ "$IsChrome" == "y" ]
@@ -253,13 +254,22 @@ while [ 1 ]
           echo -e "\033[0m"
           if [ "$IsGUI" == "Y" ] || [ "$IsGUI" == "y" ]
             then
-            echo -e "\033[1;32m"
-            echo "請選則編輯器："
-            echo "1)Atom"
-            echo "2)Sublime3"
-            echo "3)Gvim"
-            echo "4)Visual Studio Code"
-            echo -e "\033[0m"
+            while [ 1 ]
+              do
+                echo -e "\033[1;32m"
+                echo "請選則編輯器："
+                echo "1)Atom"
+                echo "2)Sublime3"
+                echo "3)Gvim"
+                echo "4)Visual Studio Code"
+                echo -e "\033[0m"
+               read EditSelect
+               if [ "$EditSelect" == "Y" ] || [ "$EditSelect" == "y" ]
+                 then break
+               elif [ "$EditSelect" == "N" ] || [ "$EditSelect" == "n" ]
+                 then break
+               fi
+              done
             break
           elif [ "$IsGUI" == "N" ] || [ "$IsGUI" == "n" ]
             then break
