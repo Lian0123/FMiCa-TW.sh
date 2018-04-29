@@ -10,6 +10,7 @@
 #       2017/07/29 Lian0123 version:0.0.41
 #       2017/08/04 Lian0123 version:0.0.42
 #       2017/08/04 Lian0123 version:0.0.42-1
+#       2018/04/29 Lian0123 version:0.0.43
 ##提升權限
 
 echo -e "\033[1;32m"
@@ -28,7 +29,7 @@ echo -e "  #  檔名：FMiCa-TW.sh                                           #  
 echo -e "  #  全名：Fixed Mint Cinnamon To Taiwan User Of Bash Shell      #  "
 echo -e "  #  用途：幫忙快速安裝程式                                      #  "
 echo -e "  #  The Program from : Lian0123                                 #  "
-echo -e "  #  The Version : 0.0.42  （很不穩定，這還沒完成）              #  "
+echo -e "  #  The Version : 0.0.43  （很不穩定，這還沒完成）              #  "
 echo -e "  ################################################################  "
 echo -e "                                                                    "
 echo -e "\033[0m"
@@ -258,17 +259,29 @@ while [ 1 ]
               do
                 echo -e "\033[1;32m"
                 echo "請選則編輯器："
-                echo "1)Atom"
-                echo "2)Sublime3"
-                echo "3)Gvim"
-                echo "4)Visual Studio Code"
+                echo "1) Atom"
+                echo "2) Sublime3"
+                echo "3) Gvim"
+                echo "4) Visual Studio Code"
+		echo "5) 結束"
+                printf "選擇選項：（請輸入代號）"
+                read EditSelect
                 echo -e "\033[0m"
-               read EditSelect
-               if [ "$EditSelect" == "Y" ] || [ "$EditSelect" == "y" ]
-                 then break
-               elif [ "$EditSelect" == "N" ] || [ "$EditSelect" == "n" ]
-                 then break
-               fi
+                if [ "$EditSelect" == "1" ]
+                  then 
+                  apt install atom
+                elif [ "$EditSelect" == "2" ]
+                  then
+                  apt install sublime-text
+                elif [ "$EditSelect" == "3" ]
+                  then 
+                  apt install  vim-gnome
+                elif [ "$EditSelect" == "4" ]
+                  then
+                  apt-get install code
+                elif [ "$EditSelect" == "5" ]
+                  then break
+                fi
               done
             break
           elif [ "$IsGUI" == "N" ] || [ "$IsGUI" == "n" ]
