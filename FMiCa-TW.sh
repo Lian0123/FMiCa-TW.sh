@@ -1,18 +1,18 @@
 #!/bin/bash
 
 #program:
-#	用於Linux mint 18.1安裝完成後的更新
+# 用於Linux mint 18.1安裝完成後的更新
 #History:
-#	2017/05/25 Lian0123 version:0.0.1
-#	2017/07/08 Lian0123 version:0.0.2
-#	2017/07/10 Lian0123 version:0.0.3
+# 2017/05/25 Lian0123 version:0.0.1
+# 2017/07/08 Lian0123 version:0.0.2
+# 2017/07/10 Lian0123 version:0.0.3
 # 2017/07/29 Lian0123 version:0.0.4
 # 2017/07/29 Lian0123 version:0.0.41
 # 2017/08/04 Lian0123 version:0.0.42
 # 2017/08/04 Lian0123 version:0.0.42-1
 # 2018/04/29 Lian0123 version:0.0.43
 # 2018/04/30 Lian0123 version:0.0.43-1
-##提升權限
+# 2018/06/30 Lian0123 version:0.1.0
 
 echo -e "\033[1;32m"
 echo -e "                                                                    "
@@ -27,10 +27,10 @@ echo -e "  #                           |  明  |                           #  "
 echo -e "  #                           一一一一                           #  "
 echo -e "  ################################################################  "
 echo -e "  #  檔名：FMiCa-TW.sh                                           #  "
-echo -e "  #  全名：Fixed Mint Cinnamon To Taiwan User Of Bash Shell      #  "
+echo -e "  #  全名：For Mint Cinnamon To Taiwan User Of Bash Shell        #  "
 echo -e "  #  用途：幫忙快速安裝程式                                      #  "
 echo -e "  #  The Program from : Lian0123                                 #  "
-echo -e "  #  The Version : 0.0.43  （很不穩定，這還沒完成）              #  "
+echo -e "  #  The Version : 0.1.0                                         #  "
 echo -e "  ################################################################  "
 echo -e "                                                                    "
 echo -e "\033[0m"
@@ -55,7 +55,13 @@ echo -e "\033[1;32m"
 echo "正在安裝SCIM中文注音..."
 echo -e "\033[0m"
 apt install -y scim-chewing
-##預設SCIM
+
+
+##安裝Fcitx
+echo -e "\033[1;32m"
+echo "正在安裝Fcitx中文注音..."
+echo -e "\033[0m"
+apt install -y fcitx-chewing
 
 ##移除難看的字體
 echo -e "\033[1;32m"
@@ -76,14 +82,6 @@ echo -e "\033[0m"
 apt install -y make 
 
 ##自訂選項設定（選擇）
-
-##字體安裝
-
-##while :
-  ##do
-    ##wget https://noto-website.storage.googleapis.com/pkgs/Noto-hinted.zip
-    ##icon下載與安裝
-  ##done
 
 while :
   do
@@ -140,7 +138,6 @@ while :
 
   done
 
-
 ##安裝其他必要程式
 
 echo -e "\033[1;32m"
@@ -159,8 +156,8 @@ while :
     echo -e "\033[0m"
     if [ "$IsChrome" == "Y" ] || [ "$IsChrome" == "y" ]
       then
-      wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-      sh -c 'echo "deb [arch=' + $(dpkg --print-architecture) + '] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+      sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+      sudo sh -c 'echo "deb [arch=' + $(dpkg --print-architecture) + '] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
       apt update
       apt install google-chrome-stable
       break
@@ -169,126 +166,53 @@ while :
     fi
   done
 
-##工程師專用選項
+##編輯器安裝詢問:
 while :
   do
     echo -e "\033[1;32m"
-    printf "你是程式工程師嗎？(Y/N)"
-    read IsProgramer
+    printf "你需要基於GUI的純文字編輯嗎？(Y/N)"
+    read IsGUI
     echo -e "\033[0m"
-    if [ "$IsProgramer" == "Y" ] || [ "$IsProgramer" == "y" ]
-      then 
-      while :
-        do
-          echo -e "\033[1;32m"
-          printf "你需要在此電腦上安裝伺服器程式嗎？(Y/N)"
-          read DoServer
-          echo -e "\033[0m"
-          if [ "$DoServer" == "Y" ] || [ "$DoServer" == "y" ]
-            then 
-            while [ 1 ]
-              do
-                echo -e "\033[1;32m"
-                echo "請選擇服務器："
-                echo "1) Apach"
-                echo "2) Nginx"
-                echo "3) 結束"
-                printf "選擇選項：（請輸入代號）"
-                read DoServerType
-                echo -e "\033[0m"
-                if [ "$DoServerType" == "1" ]
-                  then 
-                    apt install apache2
-                    break
-                elif [ "$DoServerType" == "2" ]
-                  then 
-                    break
-                    apt install nginx
-                elif [ "$DoServerType" == "3" ]
-                  then break
-                fi
-              done
-
-            while :
-              do
-                echo -e "\033[1;32m"
-                echo "請選擇資料庫："
-                echo "1) MySQL"
-                echo "2) NoSQL"
-                echo "3) MariDB"
-                echo "4) MongoDB"
-                echo "5) 結束"
-                echo "\"已預裝PHP與phpmyadmin\""
-                printf "選擇選項：（請輸入代號）"
-                read DoDBType
-                echo -e "\033[0m"
-                if [ "$DoDBType" == "1" ]
-                  then break
-                  #Install
-                elif [ "$DoDBType" == "2" ]
-                  then break
-                  #Install
-                elif [ "$DoDBType" == "3" ]
-                  then break
-                  #Install
-                elif [ "$DoDBType" == "4" ]
-                  then break
-                  #Install
-                elif [ "$DoDBType" == "5" ]
-                  then break
-                fi
-              done
-            break
-          elif [ "$DoServer" == "N" ] || [ "$DoServer" == "n" ]
-            then break
-          fi
-        done
-        		
-      while :
-        do
-          echo -e "\033[1;32m"
-          printf "你需要基於GUI的純文字編輯嗎？(Y/N)"
-          read IsGUI
-          echo -e "\033[0m"
-          if [ "$IsGUI" == "Y" ] || [ "$IsGUI" == "y" ]
-            then
-            while :
-              do
-                echo -e "\033[1;32m"
-                echo "請選則編輯器："
-                echo "1) Atom"
-                echo "2) Sublime3"
-                echo "3) Gvim"
-                echo "4) Visual Studio Code"
-            		echo "5) 結束"
-                printf "選擇選項：（請輸入代號）"
-                read EditSelect
-                echo -e "\033[0m"
-                if [ "$EditSelect" == "1" ]
-                  then 
-                  apt install atom
-                elif [ "$EditSelect" == "2" ]
-                  then
-                  apt install sublime-text
-                elif [ "$EditSelect" == "3" ]
-                  then 
+      if [ "$IsGUI" == "Y" ] || [ "$IsGUI" == "y" ]
+        then
+          while :
+            do
+              echo -e "\033[1;32m"
+              echo "請選則編輯器："
+              echo "1) Atom"
+              echo "2) Sublime3"
+              echo "3) Gvim"
+              echo "4) Visual Studio Code"
+              echo "5) 結束"
+              printf "選擇選項：（請輸入代號）"
+              read EditSelect
+              echo -e "\033[0m"
+              if [ "$EditSelect" == "1" ]
+                then 
+                 apt install atom
+              elif [ "$EditSelect" == "2" ]
+                then
+                 apt install sublime-text
+              elif [ "$EditSelect" == "3" ]
+                then 
                   apt install  vim-gnome
-                elif [ "$EditSelect" == "4" ]
-                  then
+              elif [ "$EditSelect" == "4" ]
+                then
+                  curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+                  sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+                  sudo sh -c 'echo "deb [arch=' + $(dpkg --print-architecture) + '] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+                  apt update
                   apt-get install code
-                elif [ "$EditSelect" == "5" ]
-                  then break
-                fi
-              done
-            break
-          elif [ "$IsGUI" == "N" ] || [ "$IsGUI" == "n" ]
-            then break
-          fi
-        done
-        break
-    elif [ "$IsProgramer" == "N" ] || [ "$IsProgramer" == "n" ]
-      then break
-    fi
+              elif [ "$EditSelect" == "5" ]
+                then
+                  break
+              fi
+            done
+          break
+      elif [ "$IsGUI" == "N" ] || [ "$IsGUI" == "n" ]
+        then
+          break
+       fi
   done
 
 ##安裝Wine
