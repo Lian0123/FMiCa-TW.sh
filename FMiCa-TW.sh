@@ -13,6 +13,7 @@
 # 2018/04/29 Lian0123 version:0.0.43
 # 2018/04/30 Lian0123 version:0.0.43-1
 # 2018/06/30 Lian0123 version:0.1.0
+# 2018/07/03 Lian0123 version:0.1.0-1
 
 echo -e "\033[1;32m"
 echo -e "                                                                    "
@@ -43,6 +44,12 @@ echo -e "\033[1;32m"
 echo "正在執行APT SOURCE-LIST UPDATE..."
 echo -e "\033[0m"
 apt update
+
+##UPDATE LIST
+echo -e "\033[1;32m"
+echo "正在執行APT SOURCE-LIST UPGRADE..."
+echo -e "\033[0m"
+apt list --upgradable
 
 ##UPGRADE
 echo -e "\033[1;32m"
