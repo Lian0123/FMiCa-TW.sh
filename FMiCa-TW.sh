@@ -267,18 +267,18 @@ while :
       fi
   done
 
-##Telegream?
+##Telegram?
 while :
   do
     echo -e "\033[1;32m"
-    printf "你想要安裝Telegream嗎？(Y/N)"
+    printf "你想要安裝Telegram嗎？(Y/N)"
     read IsTelegream
     echo -e "\033[0m"
     if [ "$IsTelegream" == "Y" ] || [ "$IsTelegream" == "y" ]
       then
       sudo add-apt-repository -y ppa:atareao/telegram
       apt update
-      apt install -y telegram-purple
+      apt install -y telegram
       break
     elif [ "$IsChrome" == "N" ] || [ "$IsChrome" == "n" ]
       then break
