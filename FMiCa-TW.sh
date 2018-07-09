@@ -162,7 +162,7 @@ echo -e "\033[0m"
 apt install -y vim
 sudo add-apt-repository -y ppa:djcj/screenfetch
 sudo add-apt-repository -y ppa:inkscape.dev/stable
-sudo apt-get update
+sudo apt update
 apt install -y screenfetch
 apt install -y inkscape
 
@@ -221,7 +221,7 @@ while :
                   sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
                   sudo sh -c 'echo "deb [arch=' + $(dpkg --print-architecture) + '] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
                   apt update
-                  apt-get install -y code
+                  apt install -y code
               elif [ "$EditSelect" == "5" ]
                 then
                   break
@@ -276,7 +276,7 @@ while :
     echo -e "\033[0m"
     if [ "$IsTelegream" == "Y" ] || [ "$IsTelegream" == "y" ]
       then
-      add-apt-repository -y ppa:atareao/telegram
+      sudo add-apt-repository -y ppa:atareao/telegram
       apt update
       apt install -y telegram-purple
       break
