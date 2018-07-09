@@ -128,7 +128,7 @@ while :
       echo -e "\033[1;32m"
       echo "正在安裝Numix-icon-circle..."
       echo -e "\033[0m"
-      add-apt-repository -y ppa：numix/ppa
+      add-apt-repository -y ppa:numix/ppa
       apt update
       apt install -y numix-icon-theme-circle 
     elif [ "$select" == "3" ]
@@ -265,6 +265,24 @@ while :
       elif [ "$IsWine" == "N" ] || [ "$IsWine" == "n" ] 
         then break
       fi
+  done
+
+##Telegream?
+while :
+  do
+    echo -e "\033[1;32m"
+    printf "你想要安裝Telegream嗎？(Y/N)"
+    read IsTelegream
+    echo -e "\033[0m"
+    if [ "$IsTelegream" == "Y" ] || [ "$IsTelegream" == "y" ]
+      then
+      add-apt-repository -y ppa:atareao/telegram
+      apt update
+      apt install -y telegram-purple
+      break
+    elif [ "$IsChrome" == "N" ] || [ "$IsChrome" == "n" ]
+      then break
+    fi
   done
 
 ##輸出結束
