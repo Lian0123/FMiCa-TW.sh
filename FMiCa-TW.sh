@@ -14,6 +14,7 @@
 # 2018/04/30 Lian0123 version:0.0.43-1
 # 2018/06/30 Lian0123 version:0.1.0
 # 2018/07/03 Lian0123 version:0.1.0-1
+# 2018/07/09 Lian0123 version:0.1.1
 
 echo -e "\033[1;32m"
 echo -e "                                                                    "
@@ -31,7 +32,7 @@ echo -e "  #  檔名：FMiCa-TW.sh                                           #  
 echo -e "  #  全名：For Mint Cinnamon To Taiwan User Of Bash Shell        #  "
 echo -e "  #  用途：幫忙快速安裝程式                                      #  "
 echo -e "  #  The Program from : Lian0123                                 #  "
-echo -e "  #  The Version : 0.1.0                                         #  "
+echo -e "  #  The Version : 0.1.1                                         #  "
 echo -e "  ################################################################  "
 echo -e "                                                                    "
 echo -e "\033[0m"
@@ -56,6 +57,12 @@ echo -e "\033[1;32m"
 echo "正在進行 APT DIST-UPGRADE..."
 echo -e "\033[0m"
 #apt -y dist-upgrade
+
+##安裝expect
+echo -e "\033[1;32m"
+echo "正在安裝SCIM中文注音..."
+echo -e "\033[0m"
+apt install -y expect
 
 ##安裝SCIM
 echo -e "\033[1;32m"
@@ -121,10 +128,9 @@ while :
       echo -e "\033[1;32m"
       echo "正在安裝Numix-icon-circle..."
       echo -e "\033[0m"
-      add-apt-repository ppa：numix / ppa
+      add-apt-repository -y ppa：numix/ppa
       apt update
-      apt install numix-icon-theme-circle
-      apt install 
+      apt install -y numix-icon-theme-circle 
     elif [ "$select" == "3" ]
       then
       echo -e "\033[1;32m"
@@ -146,13 +152,19 @@ while :
   done
 
 ##安裝其他必要程式
+##  安裝Vim
+##  安裝screenfetch
+##  安裝0.91版以上的inkscape版本
 
 echo -e "\033[1;32m"
 echo "正在安裝其他必要程式..."
 echo -e "\033[0m"
 apt install -y vim
-sudo add-apt-repository ppa:djcj/screenfetch
+sudo add-apt-repository -y ppa:djcj/screenfetch
+sudo add-apt-repository -y ppa:inkscape.dev/stable
+sudo apt-get update
 apt install -y screenfetch
+apt install -y inkscape
 
 ##Chrome?
 while :
@@ -166,7 +178,7 @@ while :
       sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
       sudo sh -c 'echo "deb [arch=' + $(dpkg --print-architecture) + '] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
       apt update
-      apt install google-chrome-stable
+      apt install -y google-chrome-stable
       break
     elif [ "$IsChrome" == "N" ] || [ "$IsChrome" == "n" ]
       then break
@@ -196,20 +208,20 @@ while :
               echo -e "\033[0m"
               if [ "$EditSelect" == "1" ]
                 then 
-                 apt install atom
+                 apt install -y atom
               elif [ "$EditSelect" == "2" ]
                 then
-                 apt install sublime-text
+                 apt install -y sublime-text
               elif [ "$EditSelect" == "3" ]
                 then 
-                  apt install  vim-gnome
+                  apt install -y vim-gnome
               elif [ "$EditSelect" == "4" ]
                 then
                   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
                   sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
                   sudo sh -c 'echo "deb [arch=' + $(dpkg --print-architecture) + '] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
                   apt update
-                  apt-get install code
+                  apt-get install -y code
               elif [ "$EditSelect" == "5" ]
                 then
                   break
@@ -243,7 +255,7 @@ while :
               wget -q "http://deb.playonlinux.com/public.gpg" -O- | sudo apt-key add -
               wget http://deb.playonlinux.com/playonlinux_trusty.list -O /etc/apt/sources.list.d/playonlinux.list
               apt update
-              apt install playonlinux
+              apt install -y playonlinux
               break
             elif [ "$IsPlayOn" == "N" ] || [ "$IsPlayOn" == "n" ]
               then break
