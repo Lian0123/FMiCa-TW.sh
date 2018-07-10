@@ -56,7 +56,7 @@ apt list --upgradable
 echo -e "\033[1;32m"
 echo "正在進行 APT DIST-UPGRADE..."
 echo -e "\033[0m"
-#apt -y dist-upgrade
+apt -y dist-upgrade
 
 ##安裝expect
 echo -e "\033[1;32m"
@@ -128,7 +128,7 @@ while :
       echo -e "\033[1;32m"
       echo "正在安裝Numix-icon-circle..."
       echo -e "\033[0m"
-      add-apt-repository -y ppa:numix/ppa
+      sudo add-apt-repository -y ppa:numix/ppa
       apt update
       apt install -y numix-icon-theme-circle 
     elif [ "$select" == "3" ]
@@ -160,9 +160,10 @@ echo -e "\033[1;32m"
 echo "正在安裝其他必要程式..."
 echo -e "\033[0m"
 apt install -y vim
+apt install -y w3m
 sudo add-apt-repository -y ppa:djcj/screenfetch
 sudo add-apt-repository -y ppa:inkscape.dev/stable
-sudo apt update
+apt update
 apt install -y screenfetch
 apt install -y inkscape
 
