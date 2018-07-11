@@ -14,7 +14,7 @@
 # 2018/04/30 Lian0123 version:0.0.43-1
 # 2018/06/30 Lian0123 version:0.1.0
 # 2018/07/03 Lian0123 version:0.1.0-1
-# 2018/07/09 Lian0123 version:0.1.1
+# 2018/07/09 Lian0123 version:0.1.1-1
 
 echo -e "\033[1;32m"
 echo -e "                                                                    "
@@ -117,32 +117,27 @@ while :
       mkdir .PAPER-ICON
       cd .PAPER-ICON
       git clone https://github.com/snwh/paper-icon-theme.git
-      ./autogen.sh
-      make
-      make install
+      meson "build" --prefix=/usr
+      sudo ninja -C "build" install
       cd ..
       rm -rf .PAPER-ICON
     elif [ "$select" == "2" ] 
       then
-      ##來源：numix-icon 的 github（修改）
       echo -e "\033[1;32m"
       echo "正在安裝Numix-icon-circle..."
       echo -e "\033[0m"
       sudo add-apt-repository -y ppa:numix/ppa
       apt update
-      apt install -y numix-icon-theme-circle 
+      apt install -y numix-icon-theme
+      apt install -y numix-icon-theme-circle
+      apt install -y numix-gtk-theme
     elif [ "$select" == "3" ]
       then
       echo -e "\033[1;32m"
       echo "正在安裝Breeze-icon..."
       echo -e "\033[0m"
-      mkdir .BREEZE-ICON
-      cd .BREEZE-ICON
-      git clone https://github.com/NitruxSA/breeze-icon-theme.git
-      cp Breeze /usr/share/icons
-      cp Breeze\ Dark /usr/share/icons
-      cd ..
-      rm -rf .BREEZE-ICON
+      apt install -y breeze-icon-theme
+      apt install -y breeze-cursor-theme
     elif [ "$select" == "4" ]
       then 
         echo "好的，本次不安裝圖標"
@@ -175,9 +170,9 @@ while :
     read IsChrome
     echo -e "\033[0m"
     if [ "$IsChrome" == "Y" ] || [ "$IsChrome" == "y" ]
-      then
+      then 
       sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-      sudo sh -c 'echo "deb [arch=' + $(dpkg --print-architecture) + '] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+      sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
       apt update
       apt install -y google-chrome-stable
       break
@@ -209,7 +204,8 @@ while :
               echo -e "\033[0m"
               if [ "$EditSelect" == "1" ]
                 then 
-                 apt install -y atom
+                  sudo add-apt-repository -y ppa:webupd8team/atom
+                  apt install -y atom
               elif [ "$EditSelect" == "2" ]
                 then
                  apt install -y sublime-text
@@ -220,7 +216,7 @@ while :
                 then
                   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
                   sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-                  sudo sh -c 'echo "deb [arch=' + $(dpkg --print-architecture) + '] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+                  sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
                   apt update
                   apt install -y code
               elif [ "$EditSelect" == "5" ]
