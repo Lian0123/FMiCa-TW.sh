@@ -42,7 +42,7 @@ read select
 
 ##UPDATE
 echo -e "\033[1;32m"
-echo "正在執行APT SOURCE-LIST UPDATE..."
+echo "正在執行APT UPDATE..."
 echo -e "\033[0m"
 apt update
 
@@ -50,13 +50,13 @@ apt update
 echo -e "\033[1;32m"
 echo "正在執行APT SOURCE-LIST UPGRADE..."
 echo -e "\033[0m"
-apt list --upgradable
+apt list -y --upgradable
 
 ##UPGRADE
 echo -e "\033[1;32m"
 echo "正在進行 APT DIST-UPGRADE..."
 echo -e "\033[0m"
-apt -y dist-upgrade
+apt dist-upgrade -y
 
 ##安裝expect
 echo -e "\033[1;32m"
@@ -114,6 +114,7 @@ while :
       echo -e "\033[1;32m"
       echo "正在安裝Google-paper-icon..."
       echo -e "\033[0m"
+      apt install -y ninja
       mkdir .PAPER-ICON
       cd .PAPER-ICON
       git clone https://github.com/snwh/paper-icon-theme.git
@@ -175,6 +176,7 @@ while :
       sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
       apt update
       apt install -y google-chrome-stable
+      apt install -y libnss3
       break
     elif [ "$IsChrome" == "N" ] || [ "$IsChrome" == "n" ]
       then break
@@ -204,7 +206,8 @@ while :
               echo -e "\033[0m"
               if [ "$EditSelect" == "1" ]
                 then 
-                  sudo add-apt-repository -y ppa:webupd8team/atom
+                  sudo add-apt-repository -y ppa:webupd8team/atoma
+                  apt update
                   apt install -y atom
               elif [ "$EditSelect" == "2" ]
                 then
@@ -252,6 +255,7 @@ while :
               wget -q "http://deb.playonlinux.com/public.gpg" -O- | sudo apt-key add -
               wget http://deb.playonlinux.com/playonlinux_trusty.list -O /etc/apt/sources.list.d/playonlinux.list
               apt update
+              apt install -y xterm
               apt install -y playonlinux
               break
             elif [ "$IsPlayOn" == "N" ] || [ "$IsPlayOn" == "n" ]
@@ -298,7 +302,7 @@ while :
       then
         screenfetch
         reboot now
-      break
+        break
     elif [ "$DoReboot" == "N" ] || [ "$DoReboot" == "n" ]
       then
         screenfetch
