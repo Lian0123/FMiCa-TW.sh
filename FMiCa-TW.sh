@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #program:
-# 用於Linux mint 18.1安裝完成後的更新
+# 用於Linux mint 18（含以上版本）安裝完成後的更新與安裝必要程式
 #History:
 # 2017/05/25 Lian0123 version:0.0.1
 # 2017/07/08 Lian0123 version:0.0.2
