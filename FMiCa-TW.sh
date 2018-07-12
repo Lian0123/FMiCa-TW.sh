@@ -15,6 +15,11 @@
 # 2018/06/30 Lian0123 version:0.1.0
 # 2018/07/03 Lian0123 version:0.1.0-1
 # 2018/07/09 Lian0123 version:0.1.1-1
+# 2018/07/10 Lian0123 version:0.1.1-2
+# 2018/07/11 Lian0123 version:0.1.1-3
+# 2018/07/12 Lian0123 version:0.1.2
+
+
 
 echo -e "\033[1;32m"
 echo -e "                                                                    "
@@ -32,7 +37,7 @@ echo -e "  #  檔名：FMiCa-TW.sh                                           #  
 echo -e "  #  全名：For Mint Cinnamon To Taiwan User Of Bash Shell        #  "
 echo -e "  #  用途：幫忙快速安裝程式                                      #  "
 echo -e "  #  The Program from : Lian0123                                 #  "
-echo -e "  #  The Version : 0.1.1                                         #  "
+echo -e "  #  The Version : 0.1.2                                         #  "
 echo -e "  ################################################################  "
 echo -e "                                                                    "
 echo -e "\033[0m"
@@ -141,7 +146,6 @@ while :
       apt install -y breeze-cursor-theme
     elif [ "$select" == "4" ]
       then 
-        echo "好的，本次不安裝圖標"
         break
     fi
 
@@ -150,7 +154,7 @@ while :
 ##安裝其他必要程式
 ##  安裝Vim
 ##  安裝screenfetch
-##  安裝0.91版以上的inkscape版本
+##  安裝0.91版以上的inkscape版本(直接避免遇到中文語系連選的BUG的版本)
 
 echo -e "\033[1;32m"
 echo "正在安裝其他必要程式..."
