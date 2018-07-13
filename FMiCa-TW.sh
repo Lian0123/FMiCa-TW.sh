@@ -18,6 +18,9 @@
 # 2018/07/10 Lian0123 version:0.1.1-2
 # 2018/07/11 Lian0123 version:0.1.1-3
 # 2018/07/12 Lian0123 version:0.1.2
+# 2018/07/13 Lian0123 version:0.1.2-1
+
+
 
 
 
@@ -55,7 +58,7 @@ apt update
 echo -e "\033[1;32m"
 echo "正在執行APT SOURCE-LIST UPGRADE..."
 echo -e "\033[0m"
-apt list -y --upgradable
+apt list --upgradable
 
 ##UPGRADE
 echo -e "\033[1;32m"
