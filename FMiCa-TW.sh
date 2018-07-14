@@ -52,56 +52,56 @@ read select
 echo -e "\033[1;32m"
 echo "正在執行APT UPDATE..."
 echo -e "\033[0m"
-apt update
+sudo apt update
 
 ##UPDATE LIST
 echo -e "\033[1;32m"
 echo "正在執行APT SOURCE-LIST UPGRADE..."
 echo -e "\033[0m"
-apt list --upgradable
+sudo apt list --upgradable
 
 ##UPGRADE
 echo -e "\033[1;32m"
 echo "正在進行 APT DIST-UPGRADE..."
 echo -e "\033[0m"
-apt dist-upgrade -y
+sudo apt dist-upgrade -y
 
 ##安裝expect
 echo -e "\033[1;32m"
 echo "正在安裝SCIM中文注音..."
 echo -e "\033[0m"
-apt install -y expect
+sudo apt install -y expect
 
 ##安裝SCIM
 echo -e "\033[1;32m"
 echo "正在安裝SCIM中文注音..."
 echo -e "\033[0m"
-apt install -y scim-chewing
+sudo apt install -y scim-chewing
 
 
 ##安裝Fcitx
 echo -e "\033[1;32m"
 echo "正在安裝Fcitx中文注音..."
 echo -e "\033[0m"
-apt install -y fcitx-chewing
+sudo apt install -y fcitx-chewing
 
 ##移除難看的字體
 echo -e "\033[1;32m"
 echo "正在移除看似有點醜的字體系列..."
 echo -e "\033[0m"
-apt remove -y fonts-arphic-*
+sudo apt remove -y fonts-arphic-*
 
 ##安裝git
 echo -e "\033[1;32m"
 echo "正在安裝git..."
 echo -e "\033[0m"
-apt install -y git
+sudo apt install -y git
 
 ##安裝make
 echo -e "\033[1;32m"
 echo "正在安裝make..."
 echo -e "\033[0m"
-apt install -y make 
+sudo apt install -y make 
 
 ##自訂選項設定（選擇）
 
@@ -122,13 +122,12 @@ while :
       echo -e "\033[1;32m"
       echo "正在安裝Google-paper-icon..."
       echo -e "\033[0m"
-      apt install -y ninja
-      apt install -y meson
+      sudo apt install -y ninja meson
       mkdir .PAPER-ICON
       cd .PAPER-ICON
       git clone https://github.com/snwh/paper-icon-theme.git
-      meson "build" --prefix=/usr
-      sudo ninja -C "build" install
+      sudo meson "build" --prefix=/usr
+      sudo sudo ninja -C "build" install
       cd ..
       rm -rf .PAPER-ICON
     elif [ "$select" == "2" ] 
@@ -137,17 +136,14 @@ while :
       echo "正在安裝Numix-icon-circle..."
       echo -e "\033[0m"
       sudo add-apt-repository -y ppa:numix/ppa
-      apt update
-      apt install -y numix-icon-theme
-      apt install -y numix-icon-theme-circle
-      apt install -y numix-gtk-theme
+      sudo apt update
+      sudo apt install -y numix-icon-theme numix-icon-theme-circle numix-gtk-theme
     elif [ "$select" == "3" ]
       then
       echo -e "\033[1;32m"
       echo "正在安裝Breeze-icon..."
       echo -e "\033[0m"
-      apt install -y breeze-icon-theme
-      apt install -y breeze-cursor-theme
+      sudo apt install -y breeze-icon-theme breeze-cursor-theme
     elif [ "$select" == "4" ]
       then 
         break
@@ -163,13 +159,10 @@ while :
 echo -e "\033[1;32m"
 echo "正在安裝其他必要程式..."
 echo -e "\033[0m"
-apt install -y vim
-apt install -y w3m
 sudo add-apt-repository -y ppa:djcj/screenfetch
 sudo add-apt-repository -y ppa:inkscape.dev/stable
-apt update
-apt install -y screenfetch
-apt install -y inkscape
+sudo apt update
+sudo apt install -y screenfetch inkscape vim  w3m
 
 ##Chrome?
 while :
@@ -182,9 +175,8 @@ while :
       then 
       sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
       sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-      apt update
-      apt install -y google-chrome-stable
-      apt install -y libnss3
+      sudo apt update
+      sudo apt install -y google-chrome-stable libnss3
       break
     elif [ "$IsChrome" == "N" ] || [ "$IsChrome" == "n" ]
       then break
@@ -214,22 +206,22 @@ while :
               echo -e "\033[0m"
               if [ "$EditSelect" == "1" ]
                 then 
-                  sudo add-apt-repository -y ppa:webupd8team/atoma
-                  apt update
-                  apt install -y atom
+                  sudo add-apt-repository -y ppa:webupd8team/atom
+                  sudo apt update
+                  sudo apt install -y atom
               elif [ "$EditSelect" == "2" ]
                 then
-                 apt install -y sublime-text
+                  sudo apt install -y sublime-text
               elif [ "$EditSelect" == "3" ]
                 then 
-                  apt install -y vim-gnome
+                  sudo apt install -y vim-gnome
               elif [ "$EditSelect" == "4" ]
                 then
                   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
                   sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
                   sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-                  apt update
-                  apt install -y code
+                  sudo apt update
+                  sudo apt install -y code
               elif [ "$EditSelect" == "5" ]
                 then
                   break
@@ -251,7 +243,7 @@ while :
     echo -e "\033[0m"
       if [ "$IsWine" == "Y" ] || [ "$IsWine" == "y" ]
         then 
-        apt install -y wine
+          sudo apt install -y wine
         while :
           do 
             echo -e "\033[1;32m"  
@@ -262,9 +254,8 @@ while :
               then
               wget -q "http://deb.playonlinux.com/public.gpg" -O- | sudo apt-key add -
               wget http://deb.playonlinux.com/playonlinux_trusty.list -O /etc/apt/sources.list.d/playonlinux.list
-              apt update
-              apt install -y xterm
-              apt install -y playonlinux
+              sudo apt update
+              sudo apt install -y xterm playonlinux
               break
             elif [ "$IsPlayOn" == "N" ] || [ "$IsPlayOn" == "n" ]
               then break
@@ -286,8 +277,8 @@ while :
     if [ "$IsTelegream" == "Y" ] || [ "$IsTelegream" == "y" ]
       then
       sudo add-apt-repository -y ppa:atareao/telegram
-      apt update
-      apt install -y telegram
+      sudo apt update
+      sudo apt install -y telegram
       break
     elif [ "$IsChrome" == "N" ] || [ "$IsChrome" == "n" ]
       then break
@@ -309,7 +300,7 @@ while :
     if [ "$DoReboot" == "Y" ] || [ "$DoReboot" == "y" ]
       then
         screenfetch
-        reboot now
+        sudo reboot now
         break
     elif [ "$DoReboot" == "N" ] || [ "$DoReboot" == "n" ]
       then
