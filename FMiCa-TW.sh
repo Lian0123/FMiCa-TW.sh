@@ -123,6 +123,7 @@ while :
       echo "正在安裝Google-paper-icon..."
       echo -e "\033[0m"
       apt install -y ninja
+      apt install -y meson
       mkdir .PAPER-ICON
       cd .PAPER-ICON
       git clone https://github.com/snwh/paper-icon-theme.git
