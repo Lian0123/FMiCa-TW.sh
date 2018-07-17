@@ -127,7 +127,7 @@ while :
       cd .PAPER-ICON
       git clone https://github.com/snwh/paper-icon-theme.git
       sudo meson "build" --prefix=/usr
-      sudo sudo ninja -C "build" install
+      sudo ninja -C "build" install
       cd ..
       rm -rf .PAPER-ICON
     elif [ "$select" == "2" ] 
