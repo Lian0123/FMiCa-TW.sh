@@ -20,6 +20,7 @@
 # 2018/07/12 Lian0123 version:0.1.2
 # 2018/07/13 Lian0123 version:0.1.2-1
 # 2018/07/16 Lian0123 version:0.1.2-2
+# 2018/07/18 Lian0123 version:0.1.2-3
 
 
 
@@ -127,9 +128,10 @@ while :
       mkdir .PAPER-ICON
       cd .PAPER-ICON
       git clone https://github.com/snwh/paper-icon-theme.git
+      cd ./paper-icon-theme
       sudo meson "build" --prefix=/usr
       sudo ninja -C "build" install
-      cd ..
+      cd ../../
       rm -rf .PAPER-ICON
     elif [ "$select" == "2" ] 
       then
