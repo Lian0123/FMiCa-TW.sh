@@ -23,6 +23,7 @@
 # 2018/07/18 Lian0123 version:0.1.2-3
 # 2018/07/19 Lian0123 version:0.1.2-4
 # 2018/07/19 Lian0123 version:0.1.2-5
+# 2018/07/19 Lian0123 version:0.1.2-6
 
 
 
@@ -78,6 +79,7 @@ echo "正在安裝expect..."
 echo -e "\033[0m"
 sudo apt install -y expect
 
+#Linux Mint 18、18.1 （18.2不確定）
 if [ $(lsb_release -rs) == 18 ]||[ $(lsb_release -rs) == 18.1 ]
   then
   ##安裝SCIM
@@ -93,11 +95,15 @@ else
   sudo apt install -y fcitx-chewing 
 fi
 
-##移除難看的字體
-echo -e "\033[1;32m"
-echo "正在移除看似有點醜的字體系列..."
-echo -e "\033[0m"
-sudo apt remove -y fonts-arphic-*
+#Linux Mint 18~18.3的類似標體的字體移除
+if [ $(lsb_release -rs) == 18 ]||[ $(lsb_release -rs) == 18.1 ]||[ $(lsb_release -rs) == 18.2 ]||[ $(lsb_release -rs) == 18.3 ]
+  then
+  ##移除難看的字體
+  echo -e "\033[1;32m"
+  echo "正在移除看似有點醜的字體系列..."
+  echo -e "\033[0m"
+  sudo apt remove -y fonts-arphic-*
+fi
 
 ##安裝git
 echo -e "\033[1;32m"
@@ -130,7 +136,7 @@ while :
       echo -e "\033[1;32m"
       echo "正在安裝Google-paper-icon..."
       echo -e "\033[0m"
-      sudo apt install -y ninja meson
+      sudo apt install -y ninja-build meson
       mkdir .PAPER-ICON
       cd .PAPER-ICON
       git clone https://github.com/snwh/paper-icon-theme.git
@@ -251,8 +257,15 @@ while :
     read IsWine
     echo -e "\033[0m"
       if [ "$IsWine" == "Y" ] || [ "$IsWine" == "y" ]
-        then 
-          sudo apt install -y wine
+        then
+          if [[ "$(lsb_release -rs)" > "18.3" ]]
+            then
+              #Linux Mint Vresion 19↑
+              sudo apt install -y wine-stable wine32
+          else
+              #Linux Mint Vresion 19↓
+              sudo apt install -y wine
+          fi
         while :
           do 
             echo -e "\033[1;32m"  
