@@ -68,7 +68,7 @@ sudo apt list --upgradable
 
 ##UPGRADE
 echo -e "\033[1;32m"
-echo "正在進行 APT DIST-UPGRADE..."
+echo "正在進行 APT UPGRADE..."
 echo -e "\033[0m"
 sudo apt upgrade -y
 
