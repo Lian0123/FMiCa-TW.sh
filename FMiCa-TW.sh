@@ -66,7 +66,7 @@ sudo apt list --upgradable
 echo -e "\033[1;32m"
 echo "正在進行 APT DIST-UPGRADE..."
 echo -e "\033[0m"
-sudo apt dist-upgrade -y
+sudo apt upgrade -y
 
 ##安裝expect
 echo -e "\033[1;32m"
