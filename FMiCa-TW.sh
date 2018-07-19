@@ -45,6 +45,8 @@ echo -e "  #  The Program from : Lian0123                                 #  "
 echo -e "  #  The Version : 0.1.2                                         #  "
 echo -e "  ################################################################  "
 echo -e "                                                                    "
+
+echo -e "            ---本程式可能使您的電腦上安裝非開源軟體---              "
 echo -e "\033[0m"
 
 printf "你同意要使用此腳本安裝程式嗎？現在^C中斷還來得及(任意鍵繼續)"
@@ -70,22 +72,24 @@ sudo apt upgrade -y
 
 ##安裝expect
 echo -e "\033[1;32m"
-echo "正在安裝SCIM中文注音..."
+echo "正在安裝expect..."
 echo -e "\033[0m"
 sudo apt install -y expect
 
-##安裝SCIM
-echo -e "\033[1;32m"
-echo "正在安裝SCIM中文注音..."
-echo -e "\033[0m"
-sudo apt install -y scim-chewing
-
-
-##安裝Fcitx
-echo -e "\033[1;32m"
-echo "正在安裝Fcitx中文注音..."
-echo -e "\033[0m"
-sudo apt install -y fcitx-chewing
+if [ $(lsb_release -rs) == 18 ]||[ $(lsb_release -rs) == 18.1 ]
+  then
+  ##安裝SCIM
+  echo -e "\033[1;32m"
+  echo "正在安裝SCIM中文注音..."
+  echo -e "\033[0m"
+  sudo apt install -y scim-chewing
+else
+  ##安裝Fcitx
+  echo -e "\033[1;32m"
+  echo "正在安裝Fcitx中文注音..."
+  echo -e "\033[0m"
+  sudo apt install -y fcitx-chewing 
+fi
 
 ##移除難看的字體
 echo -e "\033[1;32m"
