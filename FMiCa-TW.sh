@@ -260,9 +260,13 @@ while :
         then
           if [[ "$(lsb_release -rs)" > "18.3" ]]
             then
-              #Linux Mint Vresion 19↑
-              sudo apt install -y wine-stable wine32
-          else
+              #Linux Mint Vresion 19↑ (From WineHQ)
+              wget -nc https://dl.winehq.org/wine-builds/Release.key
+              sudo apt-key add Release.key
+              sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
+              sudo apt update
+              sudo apt-get install --install-recommends winehq-stable
+            else
               #Linux Mint Vresion 19↓
               sudo apt install -y wine
           fi
