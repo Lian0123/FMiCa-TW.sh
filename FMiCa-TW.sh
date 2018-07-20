@@ -265,7 +265,7 @@ while :
               sudo apt-key add Release.key
               sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
               sudo apt update
-              sudo apt-get install --install-recommends winehq-stable
+              sudo apt-get install -y --install-recommends winehq-stable
             else
               #Linux Mint Vresion 19↓
               sudo apt install -y wine
