@@ -260,7 +260,7 @@ while :
         then
           if [[ "$(lsb_release -rs)" > "18.3" ]]
             then
-              #Linux Mint Vresion 19↑ (From WineHQ)
+              #Linux Mint Vresion 19↑ (From WineHQ官網)
               wget -nc https://dl.winehq.org/wine-builds/Release.key
               sudo apt-key add Release.key
               sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
@@ -305,7 +305,14 @@ while :
       then
       sudo add-apt-repository -y ppa:atareao/telegram
       sudo apt update
-      sudo apt install -y telegram
+      if [[ "$(lsb_release -rs)" > "18.3" ]]
+        then
+        #Linux Mint Vresion 19↑
+        sudo apt install -y telegram orville-write
+      else
+        #Linux Mint Vresion 19↓
+        sudo apt install -y telegram 
+      fi
       break
     elif [ "$IsChrome" == "N" ] || [ "$IsChrome" == "n" ]
       then break
