@@ -123,7 +123,7 @@ while :
   do
     echo -e "\033[1;32m"
     echo "你需要安裝其他的美觀圖標嗎？(請輸入選項數字)"
-    echo "1) Google-paper-icon"
+    echo "1) Paper-icon"
     echo "2) Numix-icon-circle"
     echo "3) Breeze-icon"
     echo "4) 結束"
@@ -134,7 +134,7 @@ while :
       then
       ##來源：paper icon 的 github(修改)
       echo -e "\033[1;32m"
-      echo "正在安裝Google-paper-icon..."
+      echo "正在安裝Paper-icon..."
       echo -e "\033[0m"
       sudo apt install -y ninja-build meson
       mkdir .PAPER-ICON
@@ -212,7 +212,7 @@ while :
               echo -e "\033[1;32m"
               echo "請選則編輯器："
               echo "1) Atom"
-              echo "2) Sublime3"
+              echo "2) Sublime"
               echo "3) Gvim"
               echo "4) Visual Studio Code"
               echo "5) 結束"
@@ -299,15 +299,15 @@ while :
   do
     echo -e "\033[1;32m"
     printf "你想要安裝Telegram嗎？(Y/N)"
-    read IsTelegream
+    read IsTelegram
     echo -e "\033[0m"
-    if [ "$IsTelegream" == "Y" ] || [ "$IsTelegream" == "y" ]
+    if [ "$IsTelegram" == "Y" ] || [ "$IsTelegram" == "y" ]
       then
       sudo add-apt-repository -y ppa:atareao/telegram
       sudo apt update
       sudo apt install -y telegram orville-write
       break
-    elif [ "$IsChrome" == "N" ] || [ "$IsChrome" == "n" ]
+    elif [ "$IsTelegram" == "N" ] || [ "$IsTelegram" == "n" ]
       then break
     fi
   done
