@@ -122,7 +122,7 @@ sudo apt install -y make
 while :
   do
     echo -e "\033[1;32m"
-    echo "你需要安裝其他的美觀圖標嗎？(請輸入選項數字)"
+    echo "你需要安裝其他的圖標主題嗎？(請輸入選項數字)"
     echo "1) Paper-icon"
     echo "2) Numix-icon-circle"
     echo "3) Breeze-icon"
