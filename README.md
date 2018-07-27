@@ -7,83 +7,112 @@
 
 
 #### 直接安裝套件：
-expect ： 自動化控制的腳本（本程式安裝時不會用到）
+* expect ： 自動化控制的腳本（本程式安裝時不會用到）
+    * license ： [Public domain](https://zh.wikipedia.org/wiki/公有领域)
 
-scim-chewing ： scim的注音輸入法，適用於Mint Cinnamon 18.0與18.1版本，個人建議
+* scim-chewing ： scim的注音輸入法，適用於Mint Cinnamon 18.0與18.1版本，個人建議
+    * license ： [GPL2.0](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv2)
 
-fcitx-chewing  ： fcitx的注音輸入法，適用於Mint Cinnamon 18.2後的版本
+* fcitx-chewing  ： fcitx的注音輸入法，適用於Mint Cinnamon 18.2後的版本
+    * license ： [GPL2.0](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv2)
 
-git ： 後續部份軟體需由git clone下載
+* git ： 後續部份軟體需由git clone下載
+    * license ： [GPL2.0 與 GPL2.1](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv2)
 
-make ：後續部份軟體需由make指令安裝
+* make ：後續部份軟體需由make指令安裝
+    * license ： [GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)
 
-screenfetch ： 終端機顯示系統狀態+系統ASCII圖示，安裝結束時顯示用
+* screenfetch ： 終端機顯示系統狀態+系統ASCII圖示，安裝結束時顯示用
+    * license ： [GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)
 
-vim :  終端機上的純文字編輯器，因大多系統預設vi，所以安裝vim
+* vim :  終端機上的純文字編輯器，因大多系統預設vi，所以安裝vim
+    * license ： [Vim許可協定](https://zh.wikipedia.org/wiki/Vim#协议)
 
-w3m ： 終端機上的紋文字瀏覽器，若圖形界面出問題時，能用終端上網差問題來源
+* w3m ： 終端機上的紋文字瀏覽器，若圖形界面出問題時，能用終端上網差問題來源
+    * license ： [MIT許可協定](https://zh.wikipedia.org/wiki/MIT許可證)
 
-inkscape ：開源的向量圖形設計軟體，主要是因為據0.91版會遇到中文語系的Bug，所以直接安裝0.92含以上的版本
-
+* inkscape ：開源的向量圖形設計軟體，主要是因為據0.91版會遇到中文語系的Bug，所以直接安裝0.92含以上的版本
+    * license ： [GPL](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv1)
 
 
 #### 詢問安裝套件：
 ##### [圖標主題] Paper-Icon：
   * ninja-build ： Paper-Icon安裝用
-  
+    * license ： [Apache License 2.0](https://zh.wikipedia.org/wiki/Apache许可证)
+    
   * meson ：  Paper-Icon安裝用
+    * license ： [Apache License 2.0](https://zh.wikipedia.org/wiki/Apache许可证)
   
   * paper-icon ： Paper圖標
+      * license ： [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW)
 
   * paper-theme ： Paper主題
+      * license ： [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW)
 
 
 ##### [圖標主題] Numix-icon-circle：
   * numix-icon-theme：Numix主題
+    * license ： [GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)
 
   * numix-icon-theme-circle：Numix圖標
+    * license ： [GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)
 
   * numix-gtk-theme：Numix Gtk主題
+    * license ： [GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)
   
 ##### [圖標主題] Breeze-icon：
   * breeze-icon-theme ： breeze圖標主題
+    * license ：待查詢
   
   * breeze-cursor-theme ： breeze圖標主題（含：鼠標相關...）
+    * license ：待查詢
 
 ##### [瀏覽器] Chrome：
   * google-chrome-stable ： Google-Chrome瀏覽器（穩定版）
+    * license ：待查詢
   
   * libnss3 ： Google-Chrome會用到的函式庫
+    * license ：[MPL](https://zh.wikipedia.org/wiki/Mozilla公共许可证) / [GPL](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv1)
   
 ##### [編輯器] Atom：
   * atom ： 文字編輯器
+    * license ： [MIT許可協定](https://zh.wikipedia.org/wiki/MIT許可證)
 
 ##### [編輯器] Sublime：
   * sublime-text ：文字編輯器
-  
+    * license ： [專有軟體](https://www.sublimetext.com/eula)
 
 ##### [編輯器] Gvim：
   * vim-gnome ： 文字編輯器，支援圖形界面的vim
+    * license ： [Vim許可協定](https://zh.wikipedia.org/wiki/Vim#协议)
   
 ##### [編輯器] Visual Studio Code：
   * code ：文字編輯器
+    * license ：待查詢
   
 ##### [Wine] Wine：
   * wine ： 可讓Linux執行部份windows軟體，Linux mint 18.0～18.3版本可直接辨識"apt install wine"所需之套件
+    * license ：待查詢
   
   * winehq-stable ： Linux mint 19版本上述指令會出現分歧意，改用直接由官方庫下載安裝
+    * license ：待查詢
   
   * wine32 ： Linux mint 19版本以上的官方庫下載方法，安裝未包含wine32，所以進行安裝
+    * license ：待查詢
   
 ##### [Wine] PlayOnLinux：
   * playonlinux ： 一個基於wine並模擬windows環境的軟體
+    * license ：待查詢
   
   * xterm ： playonlinux會提出需要xterm
+    * license ：待查詢
   
 ##### [通訊軟體] Telegram：
   * telegram ： 一個基於隱私的通訊軟體
+    * license ：待查詢
   
   * orville-write ： （說明省略）
+    * license ：待查詢
 
 #### 移除安裝套件：
 fonts-arphic-* ： Mint Cinnamon 18.0～18.3預設的中文字體，因為改字體後選單上還存在所以移除
