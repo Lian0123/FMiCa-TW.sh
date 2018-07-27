@@ -5,6 +5,11 @@
 
 用途為加速安裝步驟，雖然比較像是個人使用的...（笑）
 
+#### 安裝方式：
+```
+sudo ./FMiCa-TW.sh
+```
+
 
 #### 直接安裝套件：
 * expect ： 自動化控制的腳本（本程式安裝時不會用到）
@@ -62,14 +67,14 @@
   
 ##### [圖標主題] Breeze-icon：
   * breeze-icon-theme ： breeze圖標主題
-    * license ：待查詢
+    * license ：[LGPL2.1+](https://zh.wikipedia.org/wiki/GNU宽通用公共许可证)
   
   * breeze-cursor-theme ： breeze圖標主題（含：鼠標相關...）
-    * license ：待查詢
+    * license ：[包含多種授權](http://changelogs.ubuntu.com/changelogs/pool/universe/b/breeze/breeze_5.5.5-0ubuntu1/copyright)
 
 ##### [瀏覽器] Chrome：
   * google-chrome-stable ： Google-Chrome瀏覽器（穩定版）
-    * license ：待查詢
+    * license ：[Google瀏覽器服務條款](https://www.google.com/intl/zh-TW/chrome/privacy/eula_text.html)
   
   * libnss3 ： Google-Chrome會用到的函式庫
     * license ：[MPL](https://zh.wikipedia.org/wiki/Mozilla公共许可证) / [GPL](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv1)
@@ -88,43 +93,46 @@
   
 ##### [編輯器] Visual Studio Code：
   * code ：文字編輯器
-    * license ：待查詢
+    * license ：[專有軟體](https://code.visualstudio.com/license?lang=zh-tw)
   
 ##### [Wine] Wine：
   * wine ： 可讓Linux執行部份windows軟體，Linux mint 18.0～18.3版本可直接辨識"apt install wine"所需之套件
-    * license ：待查詢
+    * license ：[LGPL](https://zh.wikipedia.org/wiki/GNU宽通用公共许可证)
   
   * winehq-stable ： Linux mint 19版本上述指令會出現分歧意，改用直接由官方庫下載安裝
-    * license ：待查詢
+    * license ：[LGPL](https://zh.wikipedia.org/wiki/GNU宽通用公共许可证)
   
   * wine32 ： Linux mint 19版本以上的官方庫下載方法，安裝未包含wine32，所以進行安裝
-    * license ：待查詢
+    * license ：[LGPL](https://zh.wikipedia.org/wiki/GNU宽通用公共许可证)
   
 ##### [Wine] PlayOnLinux：
   * playonlinux ： 一個基於wine並模擬windows環境的軟體
-    * license ：待查詢
+    * license ： [GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)/[LGPL](https://zh.wikipedia.org/wiki/GNU宽通用公共许可证)
   
   * xterm ： playonlinux會提出需要xterm
-    * license ：待查詢
+    * license ：[MIT/X Consortium License](https://zh.wikipedia.org/wiki/MIT許可證)
   
 ##### [通訊軟體] Telegram：
   * telegram ： 一個基於隱私的通訊軟體
-    * license ：待查詢
+    * license ：用戶端[GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3),伺服器端[專有軟體](https://www.sublimetext.com/eula)
   
   * orville-write ： （說明省略）
-    * license ：待查詢
+    * license ：[可免費使用、分發、修改](http://metadata.ftp-master.debian.org/changelogs/main/o/orville-write/orville-write_2.55-3_copyright)
+
 
 #### 移除安裝套件：
 fonts-arphic-* ： Mint Cinnamon 18.0～18.3預設的中文字體，因為改字體後選單上還存在所以移除
 
 
-#### 檔名：FMiCa-TW.sh
+#### 檔案相關：
+
+##### 檔名：FMiCa-TW.sh
 
 全名：For Mint Cinnamon To Taiwan User Of Bash Shell 
 
 用途：幫忙快速安裝一些必要的程式
 
-#### 檔名：README.md
+##### 檔名：README.md
 
 全名：README.md 
 
