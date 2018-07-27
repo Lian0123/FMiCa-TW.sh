@@ -1,7 +1,7 @@
 # FMiCa-TW.sh
 全名：For Mint Cinnamon To Taiwan User Intall Progream Of Bash Shell  
 
-這是個給 Linux Mint Cinnamon Taiwan 使用者的安裝程式用腳本，但...距離完成還有一段的時間...
+這是個給 Linux Mint Cinnamon Taiwan 使用者的安裝程式用腳本
 
 用途為加速安裝步驟，雖然比較像是個人使用的...（笑）
 
