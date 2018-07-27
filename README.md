@@ -28,7 +28,7 @@ inkscape ：開源的向量圖形設計軟體，主要是因為據0.91版會遇�
 
 
 #### 詢問安裝套件：
-##### [圖標] Paper-Icon：
+##### [圖標主題] Paper-Icon：
   * ninja-build ： Paper-Icon安裝用
   
   * meson ：  Paper-Icon安裝用
@@ -38,14 +38,14 @@ inkscape ：開源的向量圖形設計軟體，主要是因為據0.91版會遇�
   * paper-theme ： Paper主題
 
 
-##### [圖標] Numix-icon-circle：
+##### [圖標主題] Numix-icon-circle：
   * numix-icon-theme：Numix主題
 
   * numix-icon-theme-circle：Numix圖標
 
   * numix-gtk-theme：Numix Gtk主題
   
-##### [圖標] Breeze-icon：
+##### [圖標主題] Breeze-icon：
   * breeze-icon-theme ： breeze圖標主題
   
   * breeze-cursor-theme ： breeze圖標主題（含：鼠標相關...）
