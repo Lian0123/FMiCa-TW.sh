@@ -124,7 +124,7 @@ sudo ./FMiCa-TW.sh
 
 
 #### 移除安裝套件：
-fonts-arphic-* ： Mint Cinnamon 18.0～18.3預設的中文字體，因為改字體後選單上還存在所以移除
+  * fonts-arphic-* ： Mint Cinnamon 18.0～18.3預設的中文字體，因為改字體後選單上還存在所以移除
 
 
 #### 檔案相關：
