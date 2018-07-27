@@ -305,14 +305,7 @@ while :
       then
       sudo add-apt-repository -y ppa:atareao/telegram
       sudo apt update
-      if [[ "$(lsb_release -rs)" > "18.3" ]]
-        then
-        #Linux Mint Vresion 19↑
-        sudo apt install -y telegram orville-write
-      else
-        #Linux Mint Vresion 19↓
-        sudo apt install -y telegram 
-      fi
+      sudo apt install -y telegram orville-write
       break
     elif [ "$IsChrome" == "N" ] || [ "$IsChrome" == "n" ]
       then break
