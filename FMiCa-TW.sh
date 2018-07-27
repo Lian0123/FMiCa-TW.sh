@@ -24,7 +24,7 @@
 # 2018/07/19 Lian0123 version:0.1.2-4
 # 2018/07/19 Lian0123 version:0.1.2-5
 # 2018/07/19 Lian0123 version:0.1.2-6
-
+# 2018/07/28 Lian0123 version:0.1.3
 
 
 
@@ -45,7 +45,7 @@ echo -e "  #  檔名：FMiCa-TW.sh                                           #  
 echo -e "  #  全名：For Mint Cinnamon To Taiwan User Of Bash Shell        #  "
 echo -e "  #  用途：幫忙快速安裝程式                                      #  "
 echo -e "  #  The Program from : Lian0123                                 #  "
-echo -e "  #  The Version : 0.1.2                                         #  "
+echo -e "  #  The Version : 0.1.3                                         #  "
 echo -e "  ################################################################  "
 echo -e "                                                                    "
 
@@ -119,6 +119,7 @@ sudo apt install -y make
 
 ##自訂選項設定（選擇）
 
+##圖標主題安裝詢問：
 while :
   do
     echo -e "\033[1;32m"
@@ -179,21 +180,41 @@ sudo add-apt-repository -y ppa:inkscape.dev/stable
 sudo apt update
 sudo apt install -y screenfetch inkscape vim  w3m
 
-##Chrome?
+##Chrome或Chromium安裝詢問
 while :
   do
     echo -e "\033[1;32m"
-    printf "你想要安裝Chrome嗎？(Y/N)"
-    read IsChrome
+    printf "你想要安裝Chrome或chromium嗎？(Y/N)"
+    read IsChr
     echo -e "\033[0m"
-    if [ "$IsChrome" == "Y" ] || [ "$IsChrome" == "y" ]
+    if [ "$IsChr" == "Y" ] || [ "$IsChr" == "y" ]
       then 
-      sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-      sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-      sudo apt update
-      sudo apt install -y google-chrome-stable libnss3
+      while :
+        do
+          echo -e "\033[1;32m"
+          echo "請選則編輯器："
+          echo "1) Chromium"
+          echo "2) Chrome"
+          echo "3) 結束"
+          printf "選擇選項：（請輸入代號）"
+          read ChrSelect
+          echo -e "\033[0m"
+          if [ "$ChrSelect" == "1" ]
+            then
+              sudo apt install -y chromium-browser libnss3
+          elif [ "$ChrSelect" == "2" ]
+            then
+              sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+              sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+              sudo apt update
+              sudo apt install -y google-chrome-stable libnss3
+          elif [ "$ChrSelect" == "3" ]
+            then
+              break
+          fi
+        done
       break
-    elif [ "$IsChrome" == "N" ] || [ "$IsChrome" == "n" ]
+    elif [ "$IsChr" == "N" ] || [ "$IsChr" == "n" ]
       then break
     fi
   done
