@@ -2,32 +2,9 @@
 
 #program:
 # 用於Linux mint 18（含以上版本）安裝完成後的更新與安裝必要程式
+
 #History:
 # 2017/05/25 Lian0123 version:0.0.1
-# 2017/07/08 Lian0123 version:0.0.2
-# 2017/07/10 Lian0123 version:0.0.3
-# 2017/07/29 Lian0123 version:0.0.4
-# 2017/07/29 Lian0123 version:0.0.41
-# 2017/08/04 Lian0123 version:0.0.42
-# 2017/08/04 Lian0123 version:0.0.42-1
-# 2018/04/29 Lian0123 version:0.0.43
-# 2018/04/30 Lian0123 version:0.0.43-1
-# 2018/06/30 Lian0123 version:0.1.0
-# 2018/07/03 Lian0123 version:0.1.0-1
-# 2018/07/09 Lian0123 version:0.1.1-1
-# 2018/07/10 Lian0123 version:0.1.1-2
-# 2018/07/11 Lian0123 version:0.1.1-3
-# 2018/07/12 Lian0123 version:0.1.2
-# 2018/07/13 Lian0123 version:0.1.2-1
-# 2018/07/16 Lian0123 version:0.1.2-2
-# 2018/07/18 Lian0123 version:0.1.2-3
-# 2018/07/19 Lian0123 version:0.1.2-4
-# 2018/07/19 Lian0123 version:0.1.2-5
-# 2018/07/19 Lian0123 version:0.1.2-6
-# 2018/07/28 Lian0123 version:0.1.3
-
-
-
 
 echo -e "\033[1;32m"
 echo -e "                                                                    "
@@ -45,7 +22,7 @@ echo -e "  #  檔名：FMiCa-TW.sh                                           #  
 echo -e "  #  全名：For Mint Cinnamon To Taiwan User Of Bash Shell        #  "
 echo -e "  #  用途：幫忙快速安裝程式                                      #  "
 echo -e "  #  The Program from : Lian0123                                 #  "
-echo -e "  #  The Version : 0.1.3                                         #  "
+echo -e "  #  The Version : 1.0.0                                         #  "
 echo -e "  ################################################################  "
 echo -e "                                                                    "
 
