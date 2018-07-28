@@ -72,13 +72,17 @@ sudo ./FMiCa-TW.sh
   * breeze-cursor-theme ： breeze圖標主題（含：鼠標相關...）
     * license ：[包含多種授權](http://changelogs.ubuntu.com/changelogs/pool/universe/b/breeze/breeze_5.5.5-0ubuntu1/copyright)
 
-##### [瀏覽器] Chrome：
+##### [瀏覽器] Chromium：
   * chromium-browser ： Google-Chromium瀏覽器
     * license ：[BSD授權](https://zh.wikipedia.org/wiki/BSD%E8%AE%B8%E5%8F%AF%E8%AF%81)
-
+  
+  * libnss3 ： Google-Chrome、Google-Chromium 會用到的函式庫
+    * license ：[MPL](https://zh.wikipedia.org/wiki/Mozilla公共许可证) / [GPL](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv1)
+    
+##### [瀏覽器] Chrome：
   * google-chrome-stable ： Google-Chrome瀏覽器（穩定版）
     * license ：[專有軟體](https://www.google.com/intl/zh-TW/chrome/privacy/eula_text.html)
-  
+    
   * libnss3 ： Google-Chrome、Google-Chromium 會用到的函式庫
     * license ：[MPL](https://zh.wikipedia.org/wiki/Mozilla公共许可证) / [GPL](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv1)
   
