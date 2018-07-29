@@ -22,7 +22,7 @@ echo -e "  #  檔名：FMiCa-TW.sh                                           #  
 echo -e "  #  全名：For Mint Cinnamon To Taiwan User Of Bash Shell        #  "
 echo -e "  #  用途：幫忙快速安裝程式                                      #  "
 echo -e "  #  The Program from : Lian0123                                 #  "
-echo -e "  #  The Version : 1.0.0                                         #  "
+echo -e "  #  The Version : 1.0.1                                         #  "
 echo -e "  ################################################################  "
 echo -e "                                                                    "
 
