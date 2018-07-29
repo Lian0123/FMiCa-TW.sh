@@ -181,6 +181,7 @@ while :
               sudo apt install -y chromium-browser libnss3
           elif [ "$ChrSelect" == "2" ]
             then
+              ##來源：ubuntuupdates(修改)
               sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
               sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
               sudo apt update
@@ -230,6 +231,7 @@ while :
                   sudo apt install -y vim-gnome
               elif [ "$EditSelect" == "4" ]
                 then
+                  ##來源：VS Code官網(修改)
                   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
                   sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
                   sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
@@ -258,7 +260,7 @@ while :
         then
           if [[ "$(lsb_release -rs)" > "18.3" ]]
             then
-              #Linux Mint Vresion 19↑ (From WineHQ官網)
+              #Linux Mint Vresion 19↑ (來源： WineHQ官網)
               wget -nc https://dl.winehq.org/wine-builds/Release.key
               sudo apt-key add Release.key
               sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
