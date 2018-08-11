@@ -294,11 +294,11 @@ while :
       fi
   done
 
-##Telegram?
+##Telegram安裝詢問
 while :
   do
     echo -e "\033[1;32m"
-    printf "你想要安裝Telegram嗎？(Y/N)"
+    printf "你想要安裝通訊軟體Telegram嗎？(Y/N)"
     read IsTelegram
     echo -e "\033[0m"
     if [ "$IsTelegram" == "Y" ] || [ "$IsTelegram" == "y" ]
@@ -308,6 +308,22 @@ while :
       sudo apt install -y telegram orville-write
       break
     elif [ "$IsTelegram" == "N" ] || [ "$IsTelegram" == "n" ]
+      then break
+    fi
+  done
+
+##bleachbit安裝詢問
+while :
+  do
+    echo -e "\033[1;32m"
+    printf "你想要安裝清除快取用軟體bleachbit嗎？(Y/N)"
+    read IsBleachBit
+    echo -e "\033[0m"
+    if [ "$IsBleachBit" == "Y" ] || [ "$IsBleachBit" == "y" ]
+      then
+      sudo apt install -y bleachbit
+      break
+    elif [ "$IsBleachBit" == "N" ] || [ "$IsBleachBit" == "n" ]
       then break
     fi
   done
