@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #program:
-# 用於Linux mint cinnamon 19版本 安裝完成後的更新與安裝必要程式
+# 用於Linux mint cinnamon 18.x 安裝完成後的更新與安裝必要程式
 
 #History:
 # 2017/05/25 Lian0123 version:0.0.1
@@ -56,11 +56,28 @@ echo "正在安裝expect..."
 echo -e "\033[0m"
 sudo apt install -y expect
 
-##安裝Fcitx
+#Linux Mint 18、18.1 （18.2不確定）
+if [ $(lsb_release -rs) == 18 ]||[ $(lsb_release -rs) == 18.1 ]
+  then
+  ##安裝SCIM
+  echo -e "\033[1;32m"
+  echo "正在安裝SCIM中文注音..."
+  echo -e "\033[0m"
+  sudo apt install -y scim-chewing
+else
+  ##安裝Fcitx
+  echo -e "\033[1;32m"
+  echo "正在安裝Fcitx中文注音..."
+  echo -e "\033[0m"
+  sudo apt install -y fcitx-chewing 
+fi
+
+#Linux Mint 18~18.3的類似標體的字體移除
+##移除難看的字體
 echo -e "\033[1;32m"
-echo "正在安裝Fcitx中文注音..."
+echo "正在移除看似有點醜的字體系列..."
 echo -e "\033[0m"
-sudo apt install -y fcitx-chewing 
+sudo apt remove -y fonts-arphic-*
 
 ##安裝git
 echo -e "\033[1;32m"
@@ -238,13 +255,8 @@ while :
     echo -e "\033[0m"
       if [ "$IsWine" == "Y" ] || [ "$IsWine" == "y" ]
         then
-              #Linux Mint Vresion 19↑ (來源： WineHQ官網)
-              wget -nc https://dl.winehq.org/wine-builds/Release.key
-              sudo apt-key add Release.key
-              sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
-              sudo apt update
-              sudo apt install -y --install-recommends winehq-stable
-              sudo apt install -y wine32 
+          #Linux Mint Vresion 19↓
+          sudo apt install -y wine
         while :
           do 
             echo -e "\033[1;32m"  
@@ -286,7 +298,7 @@ while :
     fi
   done
 
-##bleachbit安裝詢問
+##Bleachbit安裝詢問
 while :
   do
     echo -e "\033[1;32m"
@@ -302,17 +314,18 @@ while :
     fi
   done
 
-##krita 安裝詢問
+##Krita安裝詢問
 while :
   do
     echo -e "\033[1;32m"
-    printf "預設的Krita版本較舊，你想要安裝最新版繪圖軟體Krita嗎？(Y/N)"
+    printf "預設的Krita版本較舊，你想要安裝較新版繪圖軟體Krita嗎？(Y/N)"
     read IsKrita
     echo -e "\033[0m"
     if [ "$IsKrita" == "Y" ] || [ "$IsKrita" == "y" ]
       then
-      ##修改來自Krita Lime PPA
-      sudo add-apt-repository -y ppa:kritalime/ppa
+      ##修改來自Kubuntu Updates(曾經遇過無法裝最新版的問題)
+      ##主目的還是讓原本可能無法切換中文解決，需從此PPA安裝krita-l10n語言套件
+      sudo add-apt-repository -y ppa:kubuntu-ppa/ppa
       sudo apt-get update
       sudo apt-get install -y krita krita-l10n
       break
@@ -336,7 +349,6 @@ while :
       then break
     fi
   done
-
 
 
 ##輸出結束
