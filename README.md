@@ -7,7 +7,13 @@
 
 #### 安裝方式：
 ```
+
+#18.x的版本
+sudo ./FMiCa-TW18x.sh
+
+#19.x的版本
 sudo ./FMiCa-TW.sh
+
 ```
 
 
@@ -126,7 +132,18 @@ sudo ./FMiCa-TW.sh
   * orville-write ： （說明省略）
     * license ：[可免費使用、分發、修改](http://metadata.ftp-master.debian.org/changelogs/main/o/orville-write/orville-write_2.55-3_copyright)
 
-
+##### [清理軟體] Bleachbit：
+  * bleachbit ： 一個開源的繪圖軟體
+    * license ： [GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)
+    
+##### [繪圖軟體] Krita：
+  * krita ： 一個開源的繪圖軟體
+    * license ： [GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)
+    
+##### [備份軟體] Timeshift：
+  * timeshift ： 一個開源的繪圖軟體
+    * license ： [GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)
+    
 #### 移除安裝套件：
   * fonts-arphic-* ： Mint Cinnamon 18.0～18.3預設的中文字體，因為改字體後選單上還存在所以移除
 
@@ -135,9 +152,21 @@ sudo ./FMiCa-TW.sh
 
 ##### 檔名：FMiCa-TW.sh
 
-全名：For Mint Cinnamon To Taiwan User Of Bash Shell 
+全名：For Mint Cinnamon To Taiwan User Of Bash Shell (version 19.x)
 
-用途：幫忙快速安裝一些必要的程式
+用途：幫忙linux mint cinnamon 19.x版本快速安裝一些必要的程式
+
+##### 檔名：FMiCa-TW18x.sh
+
+全名：For Mint Cinnamon To Taiwan User Of Bash Shell (version 18.x)
+
+用途：幫忙linux mint cinnamon 18.x版本快速安裝一些必要的程式
+
+##### 檔名：NextVersion.log
+
+全名：NextVersion.log
+
+用途：紀錄下個版本要新增的功能
 
 ##### 檔名：README.md
 
