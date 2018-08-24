@@ -1,10 +1,9 @@
-Version:1.1.0 開發目標：
- 1.Krita 3.3 繪圖軟體 中文安裝 / Krita New Version (程式碼完成)
- 2.BleachBit 清理軟體 安裝 (程式碼完成)
- 3.Adobe Brackets 網頁編輯器 安裝
- 4.Notepadqq 編輯器
- 5.Conky 桌面監控
- 6.steam 遊戲
- 7.Openshot 影像編輯
- 8.VeraCrypt 磁碟加密
- 9.Timeshift 備份(程式碼完成)
+Version:2.0.0 前可能開發目標：
+ 1.Adobe Brackets 網頁編輯器 安裝
+ 2.Notepadqq 編輯器
+ 3.Conky 桌面監控
+ 4.steam 遊戲
+ 5.Openshot 影像編輯
+ 6.VeraCrypt 磁碟加密
+ 7.lolcat 彩色功能
+ 8.neofetch 資料顯示
