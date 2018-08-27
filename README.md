@@ -78,6 +78,10 @@ sudo ./FMiCa-TW.sh
   * breeze-cursor-theme ： breeze圖標主題（含：鼠標相關...）
     * license ：[包含多種授權](http://changelogs.ubuntu.com/changelogs/pool/universe/b/breeze/breeze_5.5.5-0ubuntu1/copyright)
 
+##### [圖標主題] Mint-Y-Colora-themes：
+  * bMint-Y-Colora-themes ： Mint-Y-Colora圖標主題
+    * license ：[不明](https://github.com/erikdubois/Mint-Y-Colora-Theme-Collection)
+
 ##### [瀏覽器] Chromium：
   * chromium-browser ： Google-Chromium瀏覽器
     * license ：[BSD授權](https://zh.wikipedia.org/wiki/BSD%E8%AE%B8%E5%8F%AF%E8%AF%81)
