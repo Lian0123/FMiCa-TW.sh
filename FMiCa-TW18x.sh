@@ -18,11 +18,11 @@ echo -e "  #                        |  |  聲  |  |                        #  "
 echo -e "  #                           |  明  |                           #  "
 echo -e "  #                           一一一一                           #  "
 echo -e "  ################################################################  "
-echo -e "  #  檔名：FMiCa-TW.sh                                           #  "
+echo -e "  #  檔名：FMiCa-TW18x.sh                                           #  "
 echo -e "  #  全名：For Mint Cinnamon To Taiwan User Of Bash Shell        #  "
 echo -e "  #  用途：幫忙快速安裝程式                                      #  "
 echo -e "  #  The Program from : Lian0123                                 #  "
-echo -e "  #  The Version : 1.1.0                                         #  "
+echo -e "  #  The Version : 1.1.1                                         #  "
 echo -e "  ################################################################  "
 echo -e "                                                                    "
 
@@ -101,9 +101,10 @@ while :
     echo "1) Paper-icon"
     echo "2) Numix-icon-circle"
     echo "3) Breeze-icon"
-    echo "4) 結束"
+    echo "4) Mint-Y-Colora-Theme-Collection"
+    echo "5) 結束"
     printf "請輸入你的選項："
-    read select
+    re ad select
     echo -e "\033[0m"
     if [ "$select" == "1" ] 
       then
@@ -135,6 +136,52 @@ while :
       echo -e "\033[0m"
       sudo apt install -y breeze-icon-theme breeze-cursor-theme
     elif [ "$select" == "4" ]
+      then
+      if [[ "$(cinnamon --version)" > "Cinnamon 3.8.0" ]]
+        then
+        echo -e "\033[1;32m"
+        echo "[略過]不建議Cinnamon 3.8.0+安裝Mint-Y-Colora-Theme-Collection"
+        echo -e "\033[0m"
+      elif [[ "$(cinnamon --version)" > "Cinnamon 3.3.9" ]]
+        then
+        echo -e "\033[1;32m"
+        echo "正在安裝Mint-Y-Colora-Theme-Collection..."
+        echo -e "\033[0m"
+        mkdir .MYCTC
+        cd .MYCTC
+        git clone https://github.com/erikdubois/Mint-Y-Colora-Theme-Collection.git
+        cd ./Mint-Y-Colora-Theme-Collection
+        ./theme-mint-y-colora-collection-3.4-v1.sh
+        cd ../../
+        rm -rf .MYCTC
+      elif [[ "$(cinnamon --version)" > "Cinnamon 3.1.9" ]]
+        then
+        echo -e "\033[1;32m"
+        echo "正在安裝Mint-Y-Colora-Theme-Collection..."
+        echo -e "\033[0m"
+        mkdir .MYCTC
+        cd .MYCTC
+        git clone https://github.com/erikdubois/Mint-Y-Colora-Theme-Collection.git
+        cd ./Mint-Y-Colora-Theme-Collection
+        ./theme-mint-y-colora-collection-3.2-v1.sh
+        cd ../../
+        rm -rf .MYCTC
+      elif [[ "$(cinnamon --version)" > "Cinnamon 2.9.9" ]]
+        then
+        echo -e "\033[1;32m"
+        echo "正在安裝Mint-Y-Colora-Theme-Collection..."
+        echo -e "\033[0m"
+        mkdir .MYCTC
+        cd .MYCTC
+        git clone https://github.com/erikdubois/Mint-Y-Colora-Theme-Collection.git
+        cd ./Mint-Y-Colora-Theme-Collection
+        ./theme-mint-y-colora-collection-3.0-v1.sh
+        cd ../../
+        rm -rf .MYCTC
+      else
+        echo "[略過]抱歉你的Cinnamon版本小於(3.0.0)，請進行升級"
+      fi
+    elif [ "$select" == "5" ]
       then 
         break
     fi
