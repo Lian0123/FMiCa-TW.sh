@@ -84,7 +84,8 @@ while :
     echo "1) Paper-icon"
     echo "2) Numix-icon-circle"
     echo "3) Breeze-icon"
-    echo "4) 結束"
+    echo "4 Mato-icon"
+    echo "5) 結束"
     printf "請輸入你的選項："
     read select
     echo -e "\033[0m"
@@ -119,6 +120,16 @@ while :
       sudo apt install -y breeze-icon-theme breeze-cursor-theme
     elif [ "$select" == "4" ]
       then 
+      mkdir .MATO
+      cd .MATO
+      wget https://github.com/flipflop97/Mato/archive/v1.4.tar.gz
+      tar zxvf v1.4.tar.gz
+      cd Mato-1.4/
+      sudo ./.install
+      cd ../../
+      rm -rf .MATO
+    elif [ "$select" == "5" ]
+      then
         break
     fi
 

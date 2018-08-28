@@ -1,3 +1,8 @@
+Version:1.1.1：
+發佈FMiCa-TW18x最終版本 [停止新增程式]
+改為修復FMiCa-TW18x的Bug為主
+主力將放在Linux mint cinnamon 19.x系列
+
 Version:2.0.0 前可能開發目標：
  1.Adobe Brackets 網頁編輯器 安裝
  2.Notepadqq 編輯器
@@ -7,3 +12,6 @@ Version:2.0.0 前可能開發目標：
  6.VeraCrypt 磁碟加密
  7.lolcat 彩色功能
  8.neofetch 資料顯示
+ 9.plane-icon 新增圖標
+ 10.mato-icon 新增圖標 (完成)
+ 11.korla-icon-theme 新增圖標
