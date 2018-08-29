@@ -84,8 +84,9 @@ while :
     echo "1) Paper-icon"
     echo "2) Numix-icon-circle"
     echo "3) Breeze-icon"
-    echo "4 Mato-icon"
-    echo "5) 結束"
+    echo "4) Mato-icon"
+    echo "5) papirus-icon-theme"
+    echo "6) 結束"
     printf "請輸入你的選項："
     read select
     echo -e "\033[0m"
@@ -128,7 +129,10 @@ while :
       sudo ./.install
       cd ../../
       rm -rf .MATO
-    elif [ "$select" == "5" ]
+    elif ["$select" == "5" ]
+      then
+      sudo apt install -y papirus-icon-theme
+    elif [ "$select" == "6" ]
       then
         break
     fi
@@ -146,7 +150,7 @@ echo -e "\033[0m"
 sudo add-apt-repository -y ppa:djcj/screenfetch
 sudo add-apt-repository -y ppa:inkscape.dev/stable
 sudo apt update
-sudo apt install -y screenfetch inkscape vim  w3m
+sudo apt install -y screenfetch neofetch inkscape vim  w3m
 
 ##Chrome或Chromium安裝詢問
 while :
@@ -347,8 +351,6 @@ while :
       then break
     fi
   done
-
-
 
 ##輸出結束
 echo -e "\033[1;32m"
