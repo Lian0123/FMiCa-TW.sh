@@ -86,7 +86,8 @@ while :
     echo "3) Breeze-icon"
     echo "4) Mato-icon"
     echo "5) papirus-icon-theme"
-    echo "6) 結束"
+    echo "6) emerald-icon-theme"
+    echo "7) 結束"
     printf "請輸入你的選項："
     read select
     echo -e "\033[0m"
@@ -133,6 +134,16 @@ while :
       then
       sudo apt install -y papirus-icon-theme
     elif [ "$select" == "6" ]
+      then
+      mkdir .EMERALD
+      cd .EMERALD
+      wget https://github.com/vinceliuice/emerald-icon-theme/archive/2018.02.02.tar.gz
+      tar zxvf 2018.02.02.tar.gz
+      cd emerald-icon-theme-2018.02.02
+      sudo ./Emerald-installer.sh
+      cd ../../
+      rm -rf .EMERALD
+    elif [ "$select" == "7" ]
       then
         break
     fi
