@@ -80,6 +80,10 @@ sudo ./FMiCa-TW.sh
   
   * breeze-cursor-theme ： breeze圖標主題（含：鼠標相關...）
     * license ：[包含多種授權](http://changelogs.ubuntu.com/changelogs/pool/universe/b/breeze/breeze_5.5.5-0ubuntu1/copyright)
+
+#####  [圖標主題] mato-icon：
+  * mato-icon：mato-icon圖標主題
+    *許可證：[ CC BY-SA 4.0 ]（https://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW）
     
 ##### [圖標主題] papirus-icon-theme：
   * papirus-icon-theme  ： papirus-icon-theme圖標主題
