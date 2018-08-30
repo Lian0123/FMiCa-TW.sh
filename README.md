@@ -83,7 +83,7 @@ sudo ./FMiCa-TW.sh
 
 #####  [圖標主題] mato-icon：
   * mato-icon：mato-icon圖標主題
-    *許可證：[ CC BY-SA 4.0 ]（https://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW）
+      * license ： [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW)
     
 ##### [圖標主題] papirus-icon-theme：
   * papirus-icon-theme  ： papirus-icon-theme圖標主題
