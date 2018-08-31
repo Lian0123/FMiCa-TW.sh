@@ -184,14 +184,14 @@ while :
           echo -e "\033[0m"
           if [ "$ChrSelect" == "1" ]
             then
-              sudo apt install -y chromium-browser libnss3
+            sudo apt install -y chromium-browser libnss3
           elif [ "$ChrSelect" == "2" ]
             then
-              ##來源：ubuntuupdates(修改)
-              sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-              sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-              sudo apt update
-              sudo apt install -y google-chrome-stable libnss3
+            ##來源：ubuntuupdates(修改)
+            sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+            sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+            sudo apt update
+            sudo apt install -y google-chrome-stable libnss3
           elif [ "$ChrSelect" == "3" ]
             then
               break
@@ -220,33 +220,46 @@ while :
               echo "2) Sublime"
               echo "3) Gvim"
               echo "4) Visual Studio Code"
-              echo "5) 結束"
+              echo "5) Notepadqq"
+              echo "6) Adobe Brackets [網頁開發為主]"
+              echo "7) 結束"
               printf "選擇選項：（請輸入代號）"
               read EditSelect
               echo -e "\033[0m"
               if [ "$EditSelect" == "1" ]
                 then 
-                  sudo add-apt-repository -y ppa:webupd8team/atom
-                  sudo apt update
-                  sudo apt install -y atom
+                sudo add-apt-repository -y ppa:webupd8team/atom
+                sudo apt update
+                sudo apt install -y atom
               elif [ "$EditSelect" == "2" ]
                 then
-                  sudo apt install -y sublime-text
+                sudo apt install -y sublime-text
               elif [ "$EditSelect" == "3" ]
                 then 
-                  sudo apt install -y vim-gnome
+                sudo apt install -y vim-gnome
               elif [ "$EditSelect" == "4" ]
                 then
-                  ##來源：VS Code官網(修改)
-                  curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-                  sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-                  sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-                  sudo apt update
-                  sudo apt install -y code
+                ##來源：VS Code官網(修改)
+                curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+                sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+                sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+                sudo apt update
+                sudo apt install -y code
               elif [ "$EditSelect" == "5" ]
+                then
+                sudo add-apt-repository -y ppa:notepadqq-team/notepadqq
+                sudo apt update
+                sudo apt install -y notepadqq
+              elif [ "$EditSelect" == "6" ]
+                then
+                sudo add-apt-repository -y ppa:webupd8team/brackets
+                sudo apt update
+                sudo apt install -y brackets
+              elif [ "$EditSelect" == "7" ]
                 then
                   break
               fi
+
             done
           break
       elif [ "$IsGUI" == "N" ] || [ "$IsGUI" == "n" ]
