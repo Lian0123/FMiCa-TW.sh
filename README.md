@@ -126,6 +126,14 @@ sudo ./FMiCa-TW.sh
 ##### [編輯器] Visual Studio Code：
   * code ：文字編輯器
     * license ：[專有軟體](https://code.visualstudio.com/license?lang=zh-tw)
+      
+##### [編輯器] Notepadqq：
+  * notepadqq ：文字編輯器
+    * license ：[GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)
+      
+##### [編輯器] Adobe Brackets：
+  * brackets ：專用於網頁開發的編輯器
+    * license ：[MIT許可協定](https://zh.wikipedia.org/wiki/MIT許可證)
   
 ##### [Wine] Wine：
   * wine ： 可讓Linux執行部份windows軟體，Linux mint 18.0～18.3版本可直接辨識"apt install wine"所需之套件
