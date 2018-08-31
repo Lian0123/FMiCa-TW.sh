@@ -221,7 +221,7 @@ while :
               echo "3) Gvim"
               echo "4) Visual Studio Code"
               echo "5) Notepadqq"
-              echo "6) Adobe Brackets [網頁開發為主]"
+              echo "6) Adobe Brackets"
               echo "7) 結束"
               printf "選擇選項：（請輸入代號）"
               read EditSelect
