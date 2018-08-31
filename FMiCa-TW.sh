@@ -84,7 +84,10 @@ while :
     echo "1) Paper-icon"
     echo "2) Numix-icon-circle"
     echo "3) Breeze-icon"
-    echo "4) 結束"
+    echo "4) Mato-icon"
+    echo "5) papirus-icon-theme"
+    echo "6) emerald-icon-theme"
+    echo "7) 結束"
     printf "請輸入你的選項："
     read select
     echo -e "\033[0m"
@@ -119,6 +122,29 @@ while :
       sudo apt install -y breeze-icon-theme breeze-cursor-theme
     elif [ "$select" == "4" ]
       then 
+      mkdir .MATO
+      cd .MATO
+      wget https://github.com/flipflop97/Mato/archive/v1.4.tar.gz
+      tar zxvf v1.4.tar.gz
+      cd Mato-1.4/
+      sudo ./.install
+      cd ../../
+      rm -rf .MATO
+    elif ["$select" == "5" ]
+      then
+      sudo apt install -y papirus-icon-theme
+    elif [ "$select" == "6" ]
+      then
+      mkdir .EMERALD
+      cd .EMERALD
+      wget https://github.com/vinceliuice/emerald-icon-theme/archive/2018.02.02.tar.gz
+      tar zxvf 2018.02.02.tar.gz
+      cd emerald-icon-theme-2018.02.02
+      sudo ./Emerald-installer.sh
+      cd ../../
+      rm -rf .EMERALD
+    elif [ "$select" == "7" ]
+      then
         break
     fi
 
@@ -135,7 +161,7 @@ echo -e "\033[0m"
 sudo add-apt-repository -y ppa:djcj/screenfetch
 sudo add-apt-repository -y ppa:inkscape.dev/stable
 sudo apt update
-sudo apt install -y screenfetch inkscape vim  w3m
+sudo apt install -y screenfetch neofetch inkscape vim  w3m
 
 ##Chrome或Chromium安裝詢問
 while :
@@ -158,14 +184,14 @@ while :
           echo -e "\033[0m"
           if [ "$ChrSelect" == "1" ]
             then
-              sudo apt install -y chromium-browser libnss3
+            sudo apt install -y chromium-browser libnss3
           elif [ "$ChrSelect" == "2" ]
             then
-              ##來源：ubuntuupdates(修改)
-              sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-              sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-              sudo apt update
-              sudo apt install -y google-chrome-stable libnss3
+            ##來源：ubuntuupdates(修改)
+            sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+            sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+            sudo apt update
+            sudo apt install -y google-chrome-stable libnss3
           elif [ "$ChrSelect" == "3" ]
             then
               break
@@ -194,33 +220,46 @@ while :
               echo "2) Sublime"
               echo "3) Gvim"
               echo "4) Visual Studio Code"
-              echo "5) 結束"
+              echo "5) Notepadqq"
+              echo "6) Adobe Brackets [網頁開發為主]"
+              echo "7) 結束"
               printf "選擇選項：（請輸入代號）"
               read EditSelect
               echo -e "\033[0m"
               if [ "$EditSelect" == "1" ]
                 then 
-                  sudo add-apt-repository -y ppa:webupd8team/atom
-                  sudo apt update
-                  sudo apt install -y atom
+                sudo add-apt-repository -y ppa:webupd8team/atom
+                sudo apt update
+                sudo apt install -y atom
               elif [ "$EditSelect" == "2" ]
                 then
-                  sudo apt install -y sublime-text
+                sudo apt install -y sublime-text
               elif [ "$EditSelect" == "3" ]
                 then 
-                  sudo apt install -y vim-gnome
+                sudo apt install -y vim-gnome
               elif [ "$EditSelect" == "4" ]
                 then
-                  ##來源：VS Code官網(修改)
-                  curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-                  sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-                  sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-                  sudo apt update
-                  sudo apt install -y code
+                ##來源：VS Code官網(修改)
+                curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+                sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+                sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+                sudo apt update
+                sudo apt install -y code
               elif [ "$EditSelect" == "5" ]
+                then
+                sudo add-apt-repository -y ppa:notepadqq-team/notepadqq
+                sudo apt update
+                sudo apt install -y notepadqq
+              elif [ "$EditSelect" == "6" ]
+                then
+                sudo add-apt-repository -y ppa:webupd8team/brackets
+                sudo apt update
+                sudo apt install -y brackets
+              elif [ "$EditSelect" == "7" ]
                 then
                   break
               fi
+
             done
           break
       elif [ "$IsGUI" == "N" ] || [ "$IsGUI" == "n" ]
@@ -336,8 +375,6 @@ while :
       then break
     fi
   done
-
-
 
 ##輸出結束
 echo -e "\033[1;32m"

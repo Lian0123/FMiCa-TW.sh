@@ -32,10 +32,13 @@ sudo ./FMiCa-TW.sh
 
 * make ：後續部份軟體需由make指令安裝
     * license ： [GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)
-
+    
 * screenfetch ： 終端機顯示系統狀態+系統ASCII圖示，安裝結束時顯示用
     * license ： [GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)
 
+* neofetch ： 終端機顯示系統狀態+系統ASCII圖示
+    * license ： [MIT許可協定](https://zh.wikipedia.org/wiki/MIT許可證)
+    
 * vim :  終端機上的純文字編輯器，因大多系統預設vi，所以安裝vim
     * license ： [Vim許可協定](https://zh.wikipedia.org/wiki/Vim#协议)
 
@@ -78,6 +81,18 @@ sudo ./FMiCa-TW.sh
   * breeze-cursor-theme ： breeze圖標主題（含：鼠標相關...）
     * license ：[包含多種授權](http://changelogs.ubuntu.com/changelogs/pool/universe/b/breeze/breeze_5.5.5-0ubuntu1/copyright)
 
+#####  [圖標主題] mato-icon：
+  * mato-icon：mato-icon圖標主題
+      * license ： [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW)
+    
+##### [圖標主題] papirus-icon-theme：
+  * papirus-icon-theme  ： papirus-icon-theme圖標主題
+    * license ：[GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)
+    
+##### [圖標主題] emerald-icon-theme：
+  * emerald-icon-theme ： emerald-icon-theme 圖標主題
+    * license ：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW)
+       
 ##### [圖標主題] Mint-Y-Colora-themes：
   * Mint-Y-Colora-themes ： Mint-Y-Colora圖標主題
     * license ：[不明](https://github.com/erikdubois/Mint-Y-Colora-Theme-Collection)
@@ -111,6 +126,14 @@ sudo ./FMiCa-TW.sh
 ##### [編輯器] Visual Studio Code：
   * code ：文字編輯器
     * license ：[專有軟體](https://code.visualstudio.com/license?lang=zh-tw)
+        
+##### [編輯器] Notepadqq：
+  * notepadqq ：文字編輯器
+    * license ：[GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)
+    
+##### [編輯器] Adobe Brackets：
+  * brackets ：專用於網頁開發的編輯器
+    * license ：[MIT許可協定](https://zh.wikipedia.org/wiki/MIT許可證)
   
 ##### [Wine] Wine：
   * wine ： 可讓Linux執行部份windows軟體，Linux mint 18.0～18.3版本可直接辨識"apt install wine"所需之套件
@@ -143,6 +166,9 @@ sudo ./FMiCa-TW.sh
 ##### [繪圖軟體] Krita：
   * krita ： 一個開源的繪圖軟體
     * license ： [GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)
+        
+  * krita-l10n ： krita多國語言包
+    * license ： [LGPL](https://zh.wikipedia.org/wiki/GNU宽通用公共许可证)
     
 ##### [備份軟體] Timeshift：
   * timeshift ： 一個開源的繪圖軟體
