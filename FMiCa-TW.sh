@@ -158,10 +158,15 @@ while :
 echo -e "\033[1;32m"
 echo "正在安裝其他必要程式..."
 echo -e "\033[0m"
-sudo add-apt-repository -y ppa:djcj/screenfetch
 sudo add-apt-repository -y ppa:inkscape.dev/stable
 sudo apt update
-sudo apt install -y screenfetch neofetch inkscape vim  w3m
+sudo apt install -y screenfetch
+sudo apt install -y neofetch
+sudo apt install -y lolcat
+sudo apt install -y inkscape
+sudo apt install -y vim
+sudo apt install -y w3m
+sudo apt install -y conky-all
 
 ##Chrome或Chromium安裝詢問
 while :
@@ -345,7 +350,7 @@ while :
 while :
   do
     echo -e "\033[1;32m"
-    printf "預設的Krita版本較舊，你想要安裝最新版繪圖軟體Krita嗎？(Y/N)"
+    printf "預設庫中的Krita版本較舊，你想要安裝最新版繪圖軟體Krita嗎？(Y/N)"
     read IsKrita
     echo -e "\033[0m"
     if [ "$IsKrita" == "Y" ] || [ "$IsKrita" == "y" ]
@@ -356,6 +361,22 @@ while :
       sudo apt-get install -y krita krita-l10n
       break
     elif [ "$IsKrita" == "N" ] || [ "$IsKrita" == "n" ]
+      then break
+    fi
+  done
+
+##OpenShot 安裝詢問
+while :
+  do
+    echo -e "\033[1;32m"
+    printf "你想要安裝影片剪輯軟體OpenShot嗎？(Y/N)"
+    read IsOpenShot
+    echo -e "\033[0m"
+    if [ "$IsOpenShot" == "Y" ] || [ "$IsOpenShot" == "y" ]
+      then
+      sudo apt install -y openshot
+      break
+    elif [ "$IsOpenShot" == "N" ] || [ "$IsOpenShot" == "n" ]
       then break
     fi
   done
