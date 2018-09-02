@@ -3,14 +3,31 @@
 
 這是個給 Linux Mint Cinnamon Taiwan 使用者的安裝程式用腳本
 
-用途為加速安裝步驟，雖然比較像是個人使用的...（笑）
+用途為加速安裝步驟，雖然是以我個人常使用的軟體為優先
+
+以下license資料是由各專案Github、該軟體官網、軟體源資料、wiki等記載 逐一搜尋並紀錄之
+
+#### 開發原因：
+
+主要是原本擔心我自己的mint升級失敗後，重灌用的.......
+
+之前在 mint cinnamon 17.3升級到 mint cinnamon 18得時候，發生升級失敗而重灌的情況......
+
+所以為了怕下次升級失敗，而開始準備加速個人常用的軟體安裝的腳本......
+
+結果這次 mint cinnamon 18.3 升級到 mint cinnamon 19 ，竟然順利的完成 OwO
+
+但畢竟做了這程式，還是把這程式完成到比較完整的程度，給其他有需要的人......（繼續碼代碼）......
+
 
 #### 安裝方式：
 1.下載releases的版本
 
-2.移動到專案資料夾：
+2.解壓縮
 
-3.運行指令：
+3.移動到專案資料夾：
+
+4.運行指令：
 ```
 
 #18.x的版本
@@ -20,6 +37,7 @@ sudo ./FMiCa-TW18x.sh
 sudo ./FMiCa-TW.sh
 
 ```
+
 
 #### 直接安裝套件：
 * expect ： 自動化控制的腳本（本程式安裝時不會用到）
@@ -162,12 +180,9 @@ sudo ./FMiCa-TW.sh
     * license ：[MIT/X Consortium License](https://zh.wikipedia.org/wiki/MIT許可證)
   
 ##### [通訊軟體] Telegram：
-  * telegram ： 一個基於隱私的通訊軟體
+  * telegram-desktop ： 一個基於隱私的通訊軟體
     * license ：用戶端[GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3),伺服器端[專有軟體](https://www.sublimetext.com/eula)
   
-  * orville-write ： （說明省略）
-    * license ：[可免費使用、分發、修改](http://metadata.ftp-master.debian.org/changelogs/main/o/orville-write/orville-write_2.55-3_copyright)
-
 ##### [清理軟體] Bleachbit：
   * bleachbit ： 一個開源的繪圖軟體
     * license ： [GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)
@@ -184,7 +199,7 @@ sudo ./FMiCa-TW.sh
     * license ： [GPL3或更新](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)
     
 ##### [備份軟體] Timeshift：
-  * timeshift ： 一個開源的繪圖軟體
+  * timeshift ： 一個開源的備份軟體，mint cinnamon 18.3升級19時，用mintupgrade時會要求安裝
     * license ： [GPL3](https://zh.wikipedia.org/wiki/GNU通用公共许可证#GPLv3)
 
 #### 移除安裝套件：
