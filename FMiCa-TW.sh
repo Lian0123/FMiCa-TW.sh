@@ -22,7 +22,7 @@ echo -e "  #  檔名：FMiCa-TW.sh                                           #  
 echo -e "  #  全名：For Mint Cinnamon To Taiwan User Of Bash Shell        #  "
 echo -e "  #  用途：幫忙快速安裝程式                                      #  "
 echo -e "  #  The Program from : Lian0123                                 #  "
-echo -e "  #  The Version : 1.1.1                                         #  "
+echo -e "  #  The Version : 2.0.0                                         #  "
 echo -e "  ################################################################  "
 echo -e "                                                                    "
 
@@ -130,7 +130,7 @@ while :
       sudo ./.install
       cd ../../
       rm -rf .MATO
-    elif ["$select" == "5" ]
+    elif [ "$select" == "5" ]
       then
       sudo apt install -y papirus-icon-theme
     elif [ "$select" == "6" ]
@@ -323,7 +323,7 @@ while :
       then
       sudo add-apt-repository -y ppa:atareao/telegram
       sudo apt update
-      sudo apt install -y telegram orville-write
+      sudo apt install -y telegram-desktop
       break
     elif [ "$IsTelegram" == "N" ] || [ "$IsTelegram" == "n" ]
       then break
@@ -377,22 +377,6 @@ while :
       sudo apt install -y openshot
       break
     elif [ "$IsOpenShot" == "N" ] || [ "$IsOpenShot" == "n" ]
-      then break
-    fi
-  done
-
-##Timeshift安裝詢問
-while :
-  do
-    echo -e "\033[1;32m"
-    printf "你想要安裝備份軟體Timeshift嗎？(Y/N)"
-    read IsTimeshift
-    echo -e "\033[0m"
-    if [ "$IsTimeshift" == "Y" ] || [ "$IsTimeshift" == "y" ]
-      then
-      sudo apt-get install -y timeshift
-      break
-    elif [ "$IsTimeshift" == "N" ] || [ "$IsTimeshift" == "n" ]
       then break
     fi
   done

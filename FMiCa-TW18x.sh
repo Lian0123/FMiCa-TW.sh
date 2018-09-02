@@ -22,7 +22,7 @@ echo -e "  #  檔名：FMiCa-TW18x.sh                                           
 echo -e "  #  全名：For Mint Cinnamon To Taiwan User Of Bash Shell        #  "
 echo -e "  #  用途：幫忙快速安裝程式                                      #  "
 echo -e "  #  The Program from : Lian0123                                 #  "
-echo -e "  #  The Version : 1.1.1                                         #  "
+echo -e "  #  The Version : 2.0.0                                         #  "
 echo -e "  ################################################################  "
 echo -e "                                                                    "
 
@@ -199,7 +199,10 @@ echo -e "\033[0m"
 sudo add-apt-repository -y ppa:djcj/screenfetch
 sudo add-apt-repository -y ppa:inkscape.dev/stable
 sudo apt update
-sudo apt install -y screenfetch inkscape vim  w3m
+sudo apt install -y screenfetch 
+sudo apt install -y inkscape
+sudo apt install -y vim
+sudo apt install -y w3m
 
 ##Chrome或Chromium安裝詢問
 while :
@@ -338,7 +341,7 @@ while :
       then
       sudo add-apt-repository -y ppa:atareao/telegram
       sudo apt update
-      sudo apt install -y telegram orville-write
+      sudo apt install -y telegram
       break
     elif [ "$IsTelegram" == "N" ] || [ "$IsTelegram" == "n" ]
       then break
