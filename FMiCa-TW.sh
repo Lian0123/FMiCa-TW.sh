@@ -6,7 +6,7 @@
 #History:
 # 2017/05/25 Lian0123 version:0.0.1
 
-FMiCaVersion="0.0.1"
+FMiCaVersion="2.0.0"
 FMiCaAuthor="Lian0123"
 
 if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
