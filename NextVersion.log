@@ -14,9 +14,11 @@ Version:2.0.0 前可能開發目標：
  8.emerald-icon-theme 新增圖標 （完成）
  9.papirus-icon-theme 新增圖標 （完成）
 
-Version:3.0.0開發目標：
+Version:2.1.0前開發目標：
  1.方程式化使程式結構完整
- 2.增加argv -h -v等選項處理
- 3.增加外掛程式安裝（待研究）
+ 2.增加argv -h -v等選項處理 （完成）
+ 3.增加外掛程式安裝 （待研究）
  4.lmms 音樂製作
  5.emacs 編輯器
+ 6.teamviewer 遠端
+ 7.steam 遊戲平台
