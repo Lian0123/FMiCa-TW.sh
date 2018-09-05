@@ -4,21 +4,27 @@ Version:1.1.1：
 主力將放在Linux mint cinnamon 19.x系列
 
 Version:2.0.0 前可能開發目標：
- 1.Adobe Brackets 網頁編輯器 （完成）
- 2.Notepadqq 編輯器 （完成）
- 3.Conky 桌面監控 （完成）
- 4.Openshot 影像編輯 （完成）
- 5.lolcat 彩色功能 （完成）
- 6.neofetch 資料顯示 （完成）
- 7.mato-icon 新增圖標 （完成）
- 8.emerald-icon-theme 新增圖標 （完成）
- 9.papirus-icon-theme 新增圖標 （完成）
+ 0.Adobe Brackets 網頁編輯器 （完成）
+ 1.Notepadqq 編輯器 （完成）
+ 2.Conky 桌面監控 （完成）
+ 3.Openshot 影像編輯 （完成）
+ 4.lolcat 彩色功能 （完成）
+ 5.neofetch 資料顯示 （完成）
+ 6.mato-icon 新增圖標 （完成）
+ 7.emerald-icon-theme 新增圖標 （完成）
+ 8.papirus-icon-theme 新增圖標 （完成）
 
 Version:2.1.0前開發目標：
- 1.方程式化使程式結構完整
- 2.增加argv -h -v等選項處理 （完成）
- 3.增加外掛程式安裝 （待研究）
- 4.lmms 音樂製作
- 5.emacs 編輯器
- 6.teamviewer 遠端
- 7.steam 遊戲平台
+ 0.方程式化使程式結構完整
+ 1.增加argv -h -v等選項處理 （完成）
+ 2.增加外掛程式安裝 （待研究）
+ 3.lmms 音樂製作
+ 4.emacs 編輯器
+ 5.teamviewer 遠端
+ 6.steam 遊戲平台
+ 7.traceroute 封包監控
+ 8.openssh-server SSH
+ 9.wireshark 封包監控
+ 10.簡化顯示的 -qqy選項
+     實做方式：$TextShow預設"-y"-，$1為-n或--NotText$TextShow 設為 "-qqy"
+ 11.部份語法修正
