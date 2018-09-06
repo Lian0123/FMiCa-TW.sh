@@ -8,6 +8,12 @@
 
 FMiCaVersion="2.0.0"
 FMiCaAuthor="Lian0123"
+TextShow="-y"
+
+if [ "$1" == "-n" ] || [ "$1" == "--NotText" ]; then
+  TextShow="-qqy"
+fi
+
 
 if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
   echo "名稱："
@@ -23,6 +29,9 @@ if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
   echo -e ""
   echo -e "  -v, --version"
   echo -e "      顯示FMica-TW.sh版本"
+  echo -e ""
+  echo -e "  -n, --NotText"
+  echo -e "      減少文字敘述之安裝模式"
   echo -e "\033[0m"
 elif [ "$1" == "-a" ] || [ "$1" == "--author" ]; then
   echo -e "\033[1;32m"
@@ -75,31 +84,31 @@ else
   echo -e "\033[1;32m"
   echo "正在進行 APT UPGRADE..."
   echo -e "\033[0m"
-  sudo apt upgrade -y
+  sudo apt upgrade $TextShow
   
   ##安裝expect
   echo -e "\033[1;32m"
   echo "正在安裝expect..."
   echo -e "\033[0m"
-  sudo apt install -y expect
+  sudo apt install $TextShow expect
   
   ##安裝Fcitx
   echo -e "\033[1;32m"
   echo "正在安裝Fcitx中文注音..."
   echo -e "\033[0m"
-  sudo apt install -y fcitx-chewing 
+  sudo apt install $TextShow fcitx-chewing 
   
   ##安裝git
   echo -e "\033[1;32m"
   echo "正在安裝git..."
   echo -e "\033[0m"
-  sudo apt install -y git
+  sudo apt install $TextShow git
   
   ##安裝make
   echo -e "\033[1;32m"
   echo "正在安裝make..."
   echo -e "\033[0m"
-  sudo apt install -y make 
+  sudo apt install $TextShow make 
   
   ##自訂選項設定（選擇）
   
@@ -124,7 +133,7 @@ else
         echo -e "\033[1;32m"
         echo "正在安裝Paper-icon..."
         echo -e "\033[0m"
-        sudo apt install -y ninja-build meson
+        sudo apt install $TextShow ninja-build meson
         mkdir .PAPER-ICON
         cd .PAPER-ICON
         git clone https://github.com/snwh/paper-icon-theme.git
@@ -140,13 +149,13 @@ else
         echo -e "\033[0m"
         sudo add-apt-repository -y ppa:numix/ppa
         sudo apt update
-        sudo apt install -y numix-icon-theme numix-icon-theme-circle numix-gtk-theme
+        sudo apt install $TextShow numix-icon-theme numix-icon-theme-circle numix-gtk-theme
       elif [ "$select" == "3" ]
         then
         echo -e "\033[1;32m"
         echo "正在安裝Breeze-icon..."
         echo -e "\033[0m"
-        sudo apt install -y breeze-icon-theme breeze-cursor-theme
+        sudo apt install $TextShow breeze-icon-theme breeze-cursor-theme
       elif [ "$select" == "4" ]
         then 
         mkdir .MATO
@@ -159,7 +168,7 @@ else
         rm -rf .MATO
       elif [ "$select" == "5" ]
         then
-        sudo apt install -y papirus-icon-theme
+        sudo apt install $TextShow papirus-icon-theme
       elif [ "$select" == "6" ]
         then
         mkdir .EMERALD
@@ -187,13 +196,13 @@ else
   echo -e "\033[0m"
   sudo add-apt-repository -y ppa:inkscape.dev/stable
   sudo apt update
-  sudo apt install -y screenfetch
-  sudo apt install -y neofetch
-  sudo apt install -y lolcat
-  sudo apt install -y inkscape
-  sudo apt install -y vim
-  sudo apt install -y w3m
-  sudo apt install -y conky-all
+  sudo apt install $TextShow screenfetch
+  sudo apt install $TextShow neofetch
+  sudo apt install $TextShow lolcat
+  sudo apt install $TextShow inkscape
+  sudo apt install $TextShow vim
+  sudo apt install $TextShow w3m
+  sudo apt install $TextShow conky-all
   
   ##Chrome或Chromium安裝詢問
   while :
@@ -216,14 +225,14 @@ else
             echo -e "\033[0m"
             if [ "$ChrSelect" == "1" ]
               then
-              sudo apt install -y chromium-browser libnss3
+              sudo apt install $TextShow chromium-browser libnss3
             elif [ "$ChrSelect" == "2" ]
               then
               ##來源：ubuntuupdates(修改)
               sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
               sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
               sudo apt update
-              sudo apt install -y google-chrome-stable libnss3
+              sudo apt install $TextShow google-chrome-stable libnss3
             elif [ "$ChrSelect" == "3" ]
               then
                 break
@@ -262,13 +271,13 @@ else
                   then 
                   sudo add-apt-repository -y ppa:webupd8team/atom
                   sudo apt update
-                  sudo apt install -y atom
+                  sudo apt install $TextShow atom
                 elif [ "$EditSelect" == "2" ]
                   then
-                  sudo apt install -y sublime-text
+                  sudo apt install $TextShow sublime-text
                 elif [ "$EditSelect" == "3" ]
                   then 
-                  sudo apt install -y vim-gnome
+                  sudo apt install $TextShow vim-gnome
                 elif [ "$EditSelect" == "4" ]
                   then
                   ##來源：VS Code官網(修改)
@@ -276,17 +285,17 @@ else
                   sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
                   sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
                   sudo apt update
-                  sudo apt install -y code
+                  sudo apt install $TextShow code
                 elif [ "$EditSelect" == "5" ]
                   then
                   sudo add-apt-repository -y ppa:notepadqq-team/notepadqq
                   sudo apt update
-                  sudo apt install -y notepadqq
+                  sudo apt install $TextShow notepadqq
                 elif [ "$EditSelect" == "6" ]
                   then
                   sudo add-apt-repository -y ppa:webupd8team/brackets
                   sudo apt update
-                  sudo apt install -y brackets
+                  sudo apt install $TextShow brackets
                 elif [ "$EditSelect" == "7" ]
                   then
                     break
@@ -314,8 +323,8 @@ else
                 sudo apt-key add Release.key
                 sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
                 sudo apt update
-                sudo apt install -y --install-recommends winehq-stable
-                sudo apt install -y wine32 
+                sudo apt install $TextShow --install-recommends winehq-stable
+                sudo apt install $TextShow wine32 
           while :
             do 
               echo -e "\033[1;32m"  
@@ -327,7 +336,7 @@ else
                 wget -q "http://deb.playonlinux.com/public.gpg" -O- | sudo apt-key add -
                 wget http://deb.playonlinux.com/playonlinux_trusty.list -O /etc/apt/sources.list.d/playonlinux.list
                 sudo apt update
-                sudo apt install -y xterm playonlinux
+                sudo apt install $TextShow xterm playonlinux
                 break
               elif [ "$IsPlayOn" == "N" ] || [ "$IsPlayOn" == "n" ]
                 then break
@@ -350,7 +359,7 @@ else
         then
         sudo add-apt-repository -y ppa:atareao/telegram
         sudo apt update
-        sudo apt install -y telegram-desktop
+        sudo apt install $TextShow telegram-desktop
         break
       elif [ "$IsTelegram" == "N" ] || [ "$IsTelegram" == "n" ]
         then break
@@ -366,7 +375,7 @@ else
       echo -e "\033[0m"
       if [ "$IsBleachBit" == "Y" ] || [ "$IsBleachBit" == "y" ]
         then
-        sudo apt install -y bleachbit
+        sudo apt install $TextShow bleachbit
         break
       elif [ "$IsBleachBit" == "N" ] || [ "$IsBleachBit" == "n" ]
         then break
@@ -385,7 +394,7 @@ else
         ##修改來自Krita Lime PPA
         sudo add-apt-repository -y ppa:kritalime/ppa
         sudo apt-get update
-        sudo apt-get install -y krita krita-l10n
+        sudo apt-get install $TextShow krita krita-l10n
         break
       elif [ "$IsKrita" == "N" ] || [ "$IsKrita" == "n" ]
         then break
@@ -401,7 +410,7 @@ else
       echo -e "\033[0m"
       if [ "$IsOpenShot" == "Y" ] || [ "$IsOpenShot" == "y" ]
         then
-        sudo apt install -y openshot
+        sudo apt install $TextShow openshot
         break
       elif [ "$IsOpenShot" == "N" ] || [ "$IsOpenShot" == "n" ]
         then break

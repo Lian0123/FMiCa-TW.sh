@@ -25,6 +25,5 @@ Version:2.1.0前開發目標：
  7.traceroute 封包監控
  8.openssh-server SSH
  9.wireshark 封包監控
- 10.簡化顯示的 -qqy選項
-     實做方式：$TextShow預設"-y"-，$1為-n或--NotText$TextShow 設為 "-qqy"
+ 10.簡化顯示的 -qqy選項 （完成）
  11.部份語法修正
