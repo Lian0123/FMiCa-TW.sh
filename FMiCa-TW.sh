@@ -366,6 +366,27 @@ else
       fi
     done
   
+  ##teamviewer
+  while :
+    do
+      echo -e "\033[1;32m"
+      printf "你想要安裝遠端軟體TeamViewer嗎？(Y/N)"
+      read IsTeamViewer
+      echo -e "\033[0m"
+      if [ "$IsTeamViewer" == "Y" ] || [ "$IsTeamViewer" == "y" ]
+        then
+        mkdir .TEAMVIEW
+        cd .TEAMVIEW
+        wget https://download.teamviewer.com/download/linux/teamviewer_$(dpkg     --print-architecture).deb
+        sudo apt install $TextShow ./teamviewer_$(dpkg --print-architecture).deb
+        cd ..
+        sudo rm -rf .TEAMVIEW
+        break
+      elif [ "$IsTeamViewer" == "N" ] || [ "$IsTeamViewer" == "n" ]
+        then break
+      fi
+    done
+  
   ##bleachbit安裝詢問
   while :
     do
