@@ -414,8 +414,8 @@ else
         then
         ##修改來自Krita Lime PPA
         sudo add-apt-repository -y ppa:kritalime/ppa
-        sudo apt-get update
-        sudo apt-get install $TextShow krita krita-l10n
+        sudo apt update
+        sudo apt install $TextShow krita krita-l10n
         break
       elif [ "$IsKrita" == "N" ] || [ "$IsKrita" == "n" ]
         then break
@@ -431,7 +431,7 @@ else
       echo -e "\033[0m"
       if [ "$IsSteam" == "Y" ] || [ "$IsSteam" == "y" ]
         then
-        sudo apt-get install $TextShow steam
+        sudo apt install $TextShow steam
         break
       elif [ "$IsSteam" == "N" ] || [ "$IsSteam" == "n" ]
         then break
