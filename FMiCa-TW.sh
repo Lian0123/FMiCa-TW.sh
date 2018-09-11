@@ -421,7 +421,23 @@ else
         then break
       fi
     done
-  
+
+  ##steam 安裝詢問
+  while :
+    do
+      echo -e "\033[1;32m"
+      printf "你是否想安裝Steam平台嗎？(Y/N)"
+      read IsSteam
+      echo -e "\033[0m"
+      if [ "$IsSteam" == "Y" ] || [ "$IsSteam" == "y" ]
+        then
+        sudo apt-get install $TextShow steam
+        break
+      elif [ "$IsSteam" == "N" ] || [ "$IsSteam" == "n" ]
+        then break
+      fi
+    done
+ 
   ##OpenShot 安裝詢問
   while :
     do
