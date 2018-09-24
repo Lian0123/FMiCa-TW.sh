@@ -433,7 +433,9 @@ else
       read IsAudio
       echo -e "\033[0m"
       if [ "$IsAudio" == "Y" ] || [ "$IsAudio" == "y" ]; then
-        sudo apt install pulseaudio-equalizer
+        sudo add-apt-repository -y ppa:lamedina/comoinstalarlinux
+        sudo apt update
+        sudo apt install $TextShow pulseaudio-equalizer-ladspa swh-plugins
         break
       elif [ "$IsAudio" == "N" ] || [ "$IsAudio" == "n" ]; then 
         break
