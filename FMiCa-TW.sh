@@ -424,7 +424,24 @@ else
         break
       fi
     done
-  
+
+  ##等化器詢問
+  while :
+    do
+      echo -e "\033[1;32m"
+      printf "你想要安裝系統上音效輸出的等化器嗎？(Y/N)"
+      read IsAudio
+      echo -e "\033[0m"
+      if [ "$IsAudio" == "Y" ] || [ "$IsAudio" == "y" ]; then
+        sudo apt install pulseaudio-equalizer
+        break
+      elif [ "$IsAudio" == "N" ] || [ "$IsAudio" == "n" ]; then 
+        break
+      fi
+    done
+
+
+ 
   ##輸出結束
   echo -e "\033[1;32m"
   echo "安裝結束"
