@@ -288,6 +288,42 @@ else
         fi
     done
   
+  ##編譯器安裝詢問
+  while :
+    do
+      echo -e "\033[1;32m"
+      printf "你想要安裝編譯器嗎？(Y/N)"
+      read IsComPi
+      echo -e "\033[0m"
+      if [ "$IsComPi" == "Y" ] || [ "$IsComPi" == "y" ]; then 
+        while :
+          do
+            echo -e "\033[1;32m"
+            echo "請選則編輯器："
+            echo "1) GCC"
+            echo "2) G++"
+            echo "3) GccGo"
+            echo "4) 結束"
+            printf "選擇選項：（請輸入代號）"
+            read ComPiSelect
+            echo -e "\033[0m"
+            if [ "$ComPiSelect" == "1" ]; then
+              sudo apt install $TextShow gcc
+            elif [ "$ComPiSelect" == "2" ]; then
+              sudo apt install $TextShow g++
+            elif [ "$ComPiSelect" == "3" ]; then
+              sudo apt install $TextShow gccgo
+            elif [ "$ComPiSelect" == "4" ]; then
+              break
+            fi
+          done
+        break
+      elif [ "$IsComPi" == "N" ] || [ "$IsComPi" == "n" ]; then
+        break
+      fi
+    done
+
+
   ##安裝Wine
   while :
     do

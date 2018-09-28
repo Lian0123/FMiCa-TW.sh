@@ -20,12 +20,13 @@ Version:2.1.0前開發目標：
  2.增加外掛程式安裝 （待研究）
  3.lmms 音樂製作
  4.emacs 編輯器
- 5.teamviewer 遠端（完成）
- 6.steam 遊戲平台（完成）
+ 5.teamviewer 遠端 （完成）
+ 6.steam 遊戲平台 （完成）
  7.traceroute 封包監控
  8.openssh-server SSH
  9.wireshark 封包監控
  10.簡化顯示的 -qqy選項 （完成）
  11.部份語法修正
  12.等化器PulseAudio安裝 （完成）
- 13.gcc g++ ... 安裝
+ 13.gcc g++ ... 安裝 （完成）
+ 14.clang安裝
