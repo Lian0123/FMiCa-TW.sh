@@ -6,7 +6,7 @@
 #History:
 # 2017/05/25 Lian0123 version:0.0.1
 
-FMiCaVersion="2.0.0"
+FMiCaVersion="2.0.1"
 FMiCaAuthor="Lian0123"
 TextShow="-y"
 
@@ -303,7 +303,8 @@ else
             echo "1) GCC"
             echo "2) G++"
             echo "3) GccGo"
-            echo "4) 結束"
+            echo "4) Clang"
+            echo "5) 結束"
             printf "選擇選項：（請輸入代號）"
             read ComPiSelect
             echo -e "\033[0m"
@@ -314,6 +315,8 @@ else
             elif [ "$ComPiSelect" == "3" ]; then
               sudo apt install $TextShow gccgo
             elif [ "$ComPiSelect" == "4" ]; then
+              sudo apt install $TextShow clang
+            elif [ "$ComPiSelect" == "5" ]; then
               break
             fi
           done
