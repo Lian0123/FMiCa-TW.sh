@@ -29,5 +29,20 @@ Version:2.1.0前開發目標：
  11.部份語法修正
  12.等化器PulseAudio安裝 （完成）
  13.gcc g++ ... 安裝 （完成）
- 14.clang安裝
+ 14.clang安裝 （完成）
  15.LAMP/LNMP/XAMPP 安裝
+ 
+GUIVersion(GUI開發計畫）：
+  實做以Python與TK實做基本的GUI安裝界面，進行簡單的安裝。設定上也比CLI模式簡單，但安裝的東西也比較少。
+  實做目標：
+    0.原本必要程式自動安裝
+    1.圖標安裝
+    2.瀏覽器安裝
+    3.VS Code安裝
+    4.GNU編譯器安裝
+    5.Wine安裝
+    6.bleachbit
+    7.遠端安裝
+    8.Krita安裝
+    9.等化器安裝
+
