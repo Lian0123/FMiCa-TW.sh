@@ -142,55 +142,72 @@ while :
     printf "請輸入你的選項："
     read select
     echo -e "\033[0m"
-    if [ "$select" == "1" ]; then
-      ##來源：paper icon 的 github(修改)
-      echo -e "\033[1;32m"
-      echo "正在安裝Paper-icon..."
-      echo -e "\033[0m"
-      sudo apt install $TextShow ninja-build meson
-      mkdir .PAPER-ICON
-      cd .PAPER-ICON
-      git clone https://github.com/snwh/paper-icon-theme.git
-      cd ./paper-icon-theme
-      sudo meson "build" --prefix=/usr
-      sudo ninja -C "build" install
-      cd ../../
-      rm -rf .PAPER-ICON
-    elif [ "$select" == "2" ]; then
-      echo -e "\033[1;32m"
-      echo "正在安裝Numix-icon-circle..."
-      echo -e "\033[0m"
-      sudo add-apt-repository -y ppa:numix/ppa
-      sudo apt update
-      sudo apt install $TextShow numix-icon-theme numix-icon-theme-circle numix-gtk-theme
-    elif [ "$select" == "3" ]; then
-      echo -e "\033[1;32m"
-      echo "正在安裝Breeze-icon..."
-      echo -e "\033[0m"
-      sudo apt install $TextShow breeze-icon-theme breeze-cursor-theme
-    elif [ "$select" == "4" ]; then 
-      mkdir .MATO
-      cd .MATO
-      wget https://github.com/flipflop97/Mato/archive/v1.4.tar.gz
-      tar zxvf v1.4.tar.gz
-      cd Mato-1.4/
-      sudo ./.install
-      cd ../../
-      rm -rf .MATO
-    elif [ "$select" == "5" ]; then
-      sudo apt install $TextShow papirus-icon-theme
-    elif [ "$select" == "6" ]; then
-      mkdir .EMERALD
-      cd .EMERALD
-      wget https://github.com/vinceliuice/emerald-icon-theme/archive/2018.02.02.tar.gz
-      tar zxvf 2018.02.02.tar.gz
-      cd emerald-icon-theme-2018.02.02
-      sudo ./Emerald-installer.sh
-      cd ../../
-      rm -rf .EMERALD
-    elif [ "$select" == "7" ]; then
-      break
-    fi
+
+
+    case "$select" in
+    
+      1)## Paper-icon
+        echo -e "\033[1;32m"
+        echo "正在安裝Paper-icon..."
+        echo -e "\033[0m"
+        sudo apt install $TextShow ninja-build meson
+        mkdir .PAPER-ICON
+        cd .PAPER-ICON
+        git clone https://github.com/snwh/paper-icon-theme.git
+        cd ./paper-icon-theme
+        sudo meson "build" --prefix=/usr
+        sudo ninja -C "build" install
+        cd ../../
+        rm -rf .PAPER-ICON
+        ##來源：Paper-icon 的 github(修改)
+        ;;
+    
+      2)## Numix-icon-circle
+        echo -e "\033[1;32m"
+        echo "正在安裝Numix-icon-circle..."
+        echo -e "\033[0m"
+        sudo add-apt-repository -y ppa:numix/ppa
+        sudo apt update
+        sudo apt install $TextShow numix-icon-theme numix-icon-theme-circle numix-gtk-theme
+        ;;
+    
+      3)## Breeze-icon
+        echo -e "\033[1;32m"
+        echo "正在安裝Breeze-icon..."
+        echo -e "\033[0m"
+        sudo apt install $TextShow breeze-icon-theme breeze-cursor-theme
+        ;;
+    
+      4)## Mato-icon
+        mkdir .MATO
+        cd .MATO
+        wget https://github.com/flipflop97/Mato/archive/v1.4.tar.gz
+        tar zxvf v1.4.tar.gz
+        cd Mato-1.4/
+        sudo ./.install
+        cd ../../
+        rm -rf .MATO
+        ;;
+
+      5)## papirus-icon
+        sudo apt install $TextShow papirus-icon-theme
+        ;;
+
+      6)## emerald-icon
+        mkdir .EMERALD
+        cd .EMERALD
+        wget https://github.com/vinceliuice/emerald-icon-theme/archive/2018.02.02.tar.gz
+        tar zxvf 2018.02.02.tar.gz
+        cd emerald-icon-theme-2018.02.02
+        sudo ./Emerald-installer.sh
+        cd ../../
+        rm -rf .EMERALD
+        ;;
+
+      7)## exit
+        break
+        ;;
+    esac
 
   done
 
@@ -219,6 +236,7 @@ while :
     printf "你想要安裝Chrome或chromium嗎？(Y/N)"
     read IsChr
     echo -e "\033[0m"
+
     if [ "$IsChr" == "Y" ] || [ "$IsChr" == "y" ]; then 
       while :
         do
@@ -230,22 +248,30 @@ while :
           printf "選擇選項：（請輸入代號）"
           read ChrSelect
           echo -e "\033[0m"
-          if [ "$ChrSelect" == "1" ]; then
-            sudo apt install $TextShow chromium-browser libnss3
-          elif [ "$ChrSelect" == "2" ]; then
-            ##來源：ubuntuupdates(修改)
-            sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-            sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-            sudo apt update
-            sudo apt install $TextShow google-chrome-stable libnss3
-          elif [ "$ChrSelect" == "3" ]; then
-            break
-          fi
+          
+          case "$ChrSelect" in
+    
+            1)
+              sudo apt install $TextShow chromium-browser libnss3
+              ;;
+            2)
+              ##來源：ubuntuupdates(修改)
+              sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+              sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+              sudo apt update
+              sudo apt install $TextShow google-chrome-stable libnss3
+              ;;
+            3)
+              break
+              ;;
+          esac
+
         done
       break
     elif [ "$IsChr" == "N" ] || [ "$IsChr" == "n" ]; then
       break
     fi
+
   done
 
 ##編輯器安裝詢問:
@@ -270,32 +296,49 @@ while :
             printf "選擇選項：（請輸入代號）"
             read EditSelect
             echo -e "\033[0m"
-            if [ "$EditSelect" == "1" ]; then 
-              sudo add-apt-repository -y ppa:webupd8team/atom
-              sudo apt update
-              sudo apt install $TextShow atom
-            elif [ "$EditSelect" == "2" ]; then
-              sudo apt install $TextShow sublime-text
-            elif [ "$EditSelect" == "3" ]; then 
-              sudo apt install $TextShow vim-gnome
-            elif [ "$EditSelect" == "4" ]; then
-              ##來源：VS Code官網(修改)
-              curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-              sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-              sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-              sudo apt update
-              sudo apt install $TextShow code
-            elif [ "$EditSelect" == "5" ]; then
-              sudo add-apt-repository -y ppa:notepadqq-team/notepadqq
-              sudo apt update
-              sudo apt install $TextShow notepadqq
-            elif [ "$EditSelect" == "6" ]; then
-              sudo add-apt-repository -y ppa:webupd8team/brackets
-              sudo apt update
-              sudo apt install $TextShow brackets
-            elif [ "$EditSelect" == "7" ]; then
-              break
-            fi
+          
+            case "$EditSelect" in
+    
+              1)
+                sudo add-apt-repository -y ppa:webupd8team/atom
+                sudo apt update
+                sudo apt install $TextShow atom
+                ;;
+
+              2)
+                sudo apt install $TextShow sublime-text
+                ;;
+
+              3)
+                sudo apt install $TextShow vim-gnome
+                ;;
+
+              4)
+                ##來源：VS Code官網(修改)
+                curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+                sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+                sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+                sudo apt update
+                sudo apt install $TextShow code
+                ;;
+
+              5)
+                sudo add-apt-repository -y ppa:notepadqq-team/notepadqq
+                sudo apt update
+                sudo apt install $TextShow notepadqq
+                ;;
+
+              6)
+                sudo add-apt-repository -y ppa:webupd8team/brackets
+                sudo apt update
+                sudo apt install $TextShow brackets
+                ;;
+
+              7)
+                break
+                ;;
+            esac
+
           done
         break
       elif [ "$IsGUI" == "N" ] || [ "$IsGUI" == "n" ]; then
@@ -323,17 +366,30 @@ while :
           printf "選擇選項：（請輸入代號）"
           read ComPiSelect
           echo -e "\033[0m"
-          if [ "$ComPiSelect" == "1" ]; then
-            sudo apt install $TextShow gcc
-          elif [ "$ComPiSelect" == "2" ]; then
-            sudo apt install $TextShow g++
-          elif [ "$ComPiSelect" == "3" ]; then
-            sudo apt install $TextShow gccgo
-          elif [ "$ComPiSelect" == "4" ]; then
-            sudo apt install $TextShow clang
-          elif [ "$ComPiSelect" == "5" ]; then
-            break
-          fi
+         
+          case "$ComPiSelect" in
+    
+            1)
+              sudo apt install $TextShow gcc
+              ;;
+            
+            2)
+              sudo apt install $TextShow g++
+              ;;
+
+            3)
+              sudo apt install $TextShow gccgo
+              ;;
+
+            4)
+              sudo apt install $TextShow clang
+              ;;
+
+            5)
+              break
+              ;;
+          esac
+
         done
       break
     elif [ "$IsComPi" == "N" ] || [ "$IsComPi" == "n" ]; then
