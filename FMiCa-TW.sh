@@ -6,7 +6,7 @@
 #History:
 # 2017/05/25 Lian0123 version:0.0.1
 
-FMiCaVersion="2.0.1"
+FMiCaVersion="2.1.1"
 FMiCaAuthor="Lian0123"
 TextShow="-y"
 
@@ -256,9 +256,9 @@ while :
               ;;
             2)
               ##來源：ubuntuupdates(修改)
-              sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-              sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-              sudo apt update
+              #sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+              #sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+              #sudo apt update
               sudo apt install $TextShow google-chrome-stable libnss3
               ;;
             3)

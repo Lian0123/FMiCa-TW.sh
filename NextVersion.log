@@ -15,25 +15,30 @@ Version:2.0.0 前可能開發目標：
  8.papirus-icon-theme 新增圖標 （完成）
 
 Version:2.1.0前開發目標：
- 0.方程式化使程式結構完整
+ 0.方程式化使程式結構完整 （廢棄）
  1.增加argv -h -v等選項處理 （完成）
  2.增加外掛程式安裝 （待研究）
- 3.lmms 音樂製作
- 4.emacs 編輯器
- 5.teamviewer 遠端 （完成）
- 6.steam 遊戲平台 （完成）
- 7.traceroute 封包監控
- 8.openssh-server SSH
- 9.wireshark 封包監控
- 10.簡化顯示的 -qqy選項 （完成）
- 11.部份語法修正
- 12.等化器PulseAudio安裝 （完成）
- 13.gcc g++ ... 安裝 （完成）
- 14.clang安裝 （完成）
- 15.LAMP/LNMP/XAMPP 安裝
- 16.其他可選音樂播放器安裝
- 17.iBus輸入法
+ 3.teamviewer 遠端 （完成）
+ 4.steam 遊戲平台 （完成）
+ 5.簡化顯示的 -qqy選項 （完成）
+ 6.部份語法修正（完成）
+ 7.等化器PulseAudio安裝 （完成）
+ 8.gcc g++ ... 安裝 （完成）
+ 9.clang安裝 （完成）
 
+
+[無限期延後]
+Version：2.2.0前開發目標：
+ 0.lmms 音樂製作
+ 1.emacs 編輯器
+ 2.traceroute 封包監控
+ 3.openssh-server SSH
+ 4.wireshark 封包監控
+ 5.LAMP/LNMP/XAMPP 安裝 
+ 6.其他可選音樂播放器安裝 
+ 7.iBus輸入法 
+
+[中止]
 GUIVersion(GUI開發計畫）：
   實做以Python與TK實做基本的GUI安裝界面，進行簡單的安裝。設定上也比CLI模式簡單，但安裝的東西也比較少。
   實做目標：
