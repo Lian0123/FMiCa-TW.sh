@@ -466,6 +466,8 @@ while :
       sudo apt install $TextShow ./teamviewer_$(dpkg --print-architecture).deb
       cd ..
       sudo rm -rf .TEAMVIEW
+      sudo systemctl stop teamviewerd.service
+      sudo systemctl start teamviewerd.service
       break
     elif [ "$IsTeamViewer" == "N" ] || [ "$IsTeamViewer" == "n" ]; then 
       break
