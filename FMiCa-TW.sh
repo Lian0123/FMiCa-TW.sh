@@ -6,7 +6,7 @@
 #History:
 # 2017/05/25 Lian0123 version:0.0.1
 
-FMiCaVersion="2.1.1"
+FMiCaVersion="2.1.2"
 FMiCaAuthor="Lian0123"
 TextShow="-y"
 
@@ -255,11 +255,13 @@ while :
               sudo apt install $TextShow chromium-browser libnss3
               ;;
             2)
-              ##來源：ubuntuupdates(修改)
-              #sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-              #sudo sh -c 'echo "deb [arch="$(dpkg --print-architecture)"] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-              #sudo apt update
-              sudo apt install $TextShow google-chrome-stable libnss3
+              sudo apt install $TextShow libnss3
+              mkdir .CHROMES
+              cd .CHROMES
+              wget  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+              sudo apt install $TextShow ./google-chrome-stable_current_amd64.deb
+              cd ..
+              sudo rm -rf .CHROMES
               ;;
             3)
               break
